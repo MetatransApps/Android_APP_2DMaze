@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	
+    <string name="steps">Pasos</string>
+    <string name="enemies">Еnemigos</string>
+    <string name="achievement_desc_1">Tu hiciste</string>
+    <string name="achievement_desc_2">pasos en plazas singulares</string>
+    
+    
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    
+    <string name="steps">Стъпки</string>
+    <string name="enemies">Хищници</string>
+    <string name="achievement_desc_1">Вие направихте</string>
+    <string name="achievement_desc_2">стъпки на различни места</string>
+    
+    
+</resources>

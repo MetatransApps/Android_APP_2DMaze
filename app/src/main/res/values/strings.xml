@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    
+    <string name="steps">Steps</string>
+    <string name="enemies">Enemies</string>
+    <string name="achievement_desc_1">You made</string>
+    <string name="achievement_desc_2">steps on unique squares</string>
+    
+    
+</resources>

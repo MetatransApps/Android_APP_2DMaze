@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    
+	
+    <string name="ga_trackingId">UA-50916119-10</string>
+    
+    <!-- https://developers.google.com/analytics/devguides/collection/android/v4/parameters -->
+    
+    <integer name="ga_sessionTimeout">300</integer>
+	
+    <bool name="ga_autoActivityTracking">true</bool>
+	
+    <!-- bool name="ga_dryRun">false</bool-->
+    <!-- string name="ga_logLevel">verbose</string--> 
+    
+    <!-- screenName name="com.google.android.gms.analytics.samples.mobileplayground.ScreenviewFragment" >
+        AnalyticsSampleApp ScreenView
+    </screenName>
+    
+    <screenName name="com.google.android.gms.analytics.samples.mobileplayground.EcommerceFragment" >
+        AnalyticsSampleApp EcommerceView
+    </screenName-->
+	
+</resources>

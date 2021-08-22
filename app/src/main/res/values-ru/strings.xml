@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    
+    <string name="steps">Шаги</string>
+    <string name="enemies">Враги</string>
+    <string name="achievement_desc_1">Ты сделал</string>
+    <string name="achievement_desc_2">шаги по уникальной квадратов</string>
+    
+    
+</resources>
