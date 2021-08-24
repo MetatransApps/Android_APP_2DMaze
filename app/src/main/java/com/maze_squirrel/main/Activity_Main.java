@@ -33,8 +33,8 @@ public class Activity_Main extends Activity_Main_Base2D implements IActivityInte
 				current_adLoadFlow_Interstitial.resume();
 			}
 			
-		} catch(Exception e) {
-			e.printStackTrace();
+		} catch(Throwable t) {
+			t.printStackTrace();
 		}
 	}
 	
