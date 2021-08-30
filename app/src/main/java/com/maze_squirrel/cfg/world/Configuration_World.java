@@ -1,7 +1,7 @@
 package com.maze_squirrel.cfg.world;
 
 
-import org.metatransapps.commons.app.Application_Base;
+import org.metatrans.commons.app.Application_Base;
 
 import com.maze_squirrel.lib.R;
 import com.maze_squirrel.model.WorldGenerator_Labyrints;

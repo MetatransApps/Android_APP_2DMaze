@@ -4,14 +4,14 @@ package com.maze_squirrel.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.metatransapps.commons.app.Application_Base;
-import org.metatransapps.commons.graphics2d.model.World;
-import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Bullet;
-import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Challenger;
-import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Moving;
-import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Special;
-import org.metatransapps.commons.graphics2d.model.entities.IEntity2D;
-import org.metatransapps.commons.ui.utils.BitmapUtils;
+import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.graphics2d.model.World;
+import org.metatrans.commons.graphics2d.model.entities.Entity2D_Bullet;
+import org.metatrans.commons.graphics2d.model.entities.Entity2D_Challenger;
+import org.metatrans.commons.graphics2d.model.entities.Entity2D_Moving;
+import org.metatrans.commons.graphics2d.model.entities.Entity2D_Special;
+import org.metatrans.commons.graphics2d.model.entities.IEntity2D;
+import org.metatrans.commons.ui.utils.BitmapUtils;
 
 import android.content.Context;
 import android.graphics.Bitmap;

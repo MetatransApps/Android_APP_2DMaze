@@ -1,11 +1,11 @@
 package com.maze_squirrel.main;
 
 
-import org.metatransapps.commons.ads.api.IAdsConfiguration;
-import org.metatransapps.commons.ads.impl.flow.IAdLoadFlow;
-import org.metatransapps.commons.app.Application_Base_Ads;
-import org.metatransapps.commons.app.IActivityInterstitial;
-import org.metatransapps.commons.graphics2d.main.Activity_Main_Base2D;
+import org.metatrans.commons.ads.api.IAdsConfiguration;
+import org.metatrans.commons.ads.impl.flow.IAdLoadFlow;
+import org.metatrans.commons.app.Application_Base_Ads;
+import org.metatrans.commons.app.IActivityInterstitial;
+import org.metatrans.commons.graphics2d.main.Activity_Main_Base2D;
 
 import android.view.View;
 

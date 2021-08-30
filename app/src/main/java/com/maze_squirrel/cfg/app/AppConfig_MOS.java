@@ -1,7 +1,7 @@
 package com.maze_squirrel.cfg.app;
 
 
-import org.metatransapps.commons.cfg.app.AppConfig_Base;
+import org.metatrans.commons.cfg.app.AppConfig_Base;
 
 
 public class AppConfig_MOS extends AppConfig_Base {

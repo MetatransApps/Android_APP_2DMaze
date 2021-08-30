@@ -3,10 +3,10 @@ package com.maze_squirrel.model.entities;
 
 import java.util.List;
 
-import org.metatransapps.commons.graphics2d.model.World;
-import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Challenger;
-import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Ground;
-import org.metatransapps.commons.graphics2d.model.entities.IEntity2D;
+import org.metatrans.commons.graphics2d.model.World;
+import org.metatrans.commons.graphics2d.model.entities.Entity2D_Challenger;
+import org.metatrans.commons.graphics2d.model.entities.Entity2D_Ground;
+import org.metatrans.commons.graphics2d.model.entities.IEntity2D;
 
 import android.graphics.Bitmap;
 import android.graphics.RectF;

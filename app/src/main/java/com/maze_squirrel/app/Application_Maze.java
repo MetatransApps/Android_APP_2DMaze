@@ -1,20 +1,20 @@
 package com.maze_squirrel.app;
 
 
-import org.metatransapps.commons.achievements.IAchievementsManager;
-import org.metatransapps.commons.app.Application_Base;
-import org.metatransapps.commons.app.Application_Base_Ads;
-import org.metatransapps.commons.cfg.app.IAppConfig;
-import org.metatransapps.commons.cfg.colours.ConfigurationUtils_Colours;
-import org.metatransapps.commons.cfg.menu.ConfigurationUtils_Base_MenuMain;
-import org.metatransapps.commons.engagement.ILeaderboardsProvider;
-import org.metatransapps.commons.engagement.leaderboards.LeaderboardsProvider_Base;
-import org.metatransapps.commons.events.api.IEventsManager;
-import org.metatransapps.commons.graphics2d.app.Application_2D_Base;
-import org.metatransapps.commons.graphics2d.model.GameData;
-import org.metatransapps.commons.graphics2d.model.IWorld;
-import org.metatransapps.commons.model.UserSettings_Base;
-import org.metatransapps.commons.ui.utils.DebugUtils;
+import org.metatrans.commons.achievements.IAchievementsManager;
+import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.app.Application_Base_Ads;
+import org.metatrans.commons.cfg.app.IAppConfig;
+import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
+import org.metatrans.commons.cfg.menu.ConfigurationUtils_Base_MenuMain;
+import org.metatrans.commons.engagement.ILeaderboardsProvider;
+import org.metatrans.commons.engagement.leaderboards.LeaderboardsProvider_Base;
+import org.metatrans.commons.events.api.IEventsManager;
+import org.metatrans.commons.graphics2d.app.Application_2D_Base;
+import org.metatrans.commons.graphics2d.model.GameData;
+import org.metatrans.commons.graphics2d.model.IWorld;
+import org.metatrans.commons.model.UserSettings_Base;
+import org.metatrans.commons.ui.utils.DebugUtils;
 
 import com.maze_squirrel.lib.BuildConfig;
 import com.maze_squirrel.achievements.AchievementsManager_MOS;

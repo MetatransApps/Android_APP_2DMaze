@@ -1,12 +1,12 @@
 package com.maze_squirrel.loading;
 
 
-import org.metatransapps.commons.Activity_Base;
-import org.metatransapps.commons.ads.api.IAdsConfiguration;
-import org.metatransapps.commons.app.Application_Base_Ads;
-import org.metatransapps.commons.cfg.colours.ConfigurationUtils_Colours;
-import org.metatransapps.commons.cfg.colours.IConfigurationColours;
-import org.metatransapps.commons.loading.View_Loading_Base;
+import org.metatrans.commons.Activity_Base;
+import org.metatrans.commons.ads.api.IAdsConfiguration;
+import org.metatrans.commons.app.Application_Base_Ads;
+import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
+import org.metatrans.commons.cfg.colours.IConfigurationColours;
+import org.metatrans.commons.loading.View_Loading_Base;
 
 import com.maze_squirrel.lib.R;
 import com.maze_squirrel.app.Application_Maze;
@@ -14,7 +14,7 @@ import com.maze_squirrel.main.Activity_Main;
 import com.maze_squirrel.menu.Activity_Menu_Levels;
 
 
-public class Activity_Loading extends org.metatransapps.commons.loading.Activity_Loading_Base_Ads {
+public class Activity_Loading extends org.metatrans.commons.loading.Activity_Loading_Base_Ads {
 	
 	
 	@Override

@@ -3,9 +3,9 @@ package com.maze_squirrel.model.entities;
 
 import android.graphics.RectF;
 
-import org.metatransapps.commons.app.Application_Base;
-import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Ground;
-import org.metatransapps.commons.graphics2d.model.entities.IEntity2D;
+import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.graphics2d.model.entities.Entity2D_Ground;
+import org.metatrans.commons.graphics2d.model.entities.IEntity2D;
 
 
 public class Entity2D_Ground_Empty_Labyrinths extends Entity2D_Ground {

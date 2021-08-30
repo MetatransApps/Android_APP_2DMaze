@@ -1,8 +1,8 @@
 package com.maze_squirrel.cfg.achievements;
 
 
-import org.metatransapps.commons.app.Application_Base;
-import org.metatransapps.commons.cfg.achievements.Config_Achievement_Base;
+import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.cfg.achievements.Config_Achievement_Base;
 
 import com.maze_squirrel.lib.R;
 

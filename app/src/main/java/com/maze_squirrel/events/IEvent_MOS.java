@@ -1,7 +1,7 @@
 package com.maze_squirrel.events;
 
 
-import org.metatransapps.commons.events.api.IEvent_Base;
+import org.metatrans.commons.events.api.IEvent_Base;
 
 
 public interface IEvent_MOS extends IEvent_Base {

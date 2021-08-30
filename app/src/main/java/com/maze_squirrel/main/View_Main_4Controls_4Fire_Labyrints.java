@@ -8,11 +8,11 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
-import org.metatransapps.commons.graphics2d.main.Activity_Main_Base2D;
-import org.metatransapps.commons.graphics2d.ui.View_Main_4Controls_4Fire;
-import org.metatransapps.commons.ui.TextArea;
-import org.metatransapps.commons.ui.utils.BitmapUtils;
-import org.metatransapps.commons.ui.utils.ScreenUtils;
+import org.metatrans.commons.graphics2d.main.Activity_Main_Base2D;
+import org.metatrans.commons.graphics2d.ui.View_Main_4Controls_4Fire;
+import org.metatrans.commons.ui.TextArea;
+import org.metatrans.commons.ui.utils.BitmapUtils;
+import org.metatrans.commons.ui.utils.ScreenUtils;
 
 import com.maze_squirrel.lib.R;
 import com.maze_squirrel.app.Application_Maze;

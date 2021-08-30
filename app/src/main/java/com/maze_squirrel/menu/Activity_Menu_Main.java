@@ -3,10 +3,10 @@ package com.maze_squirrel.menu;
 
 import java.util.List;
 
-import org.metatransapps.commons.app.Application_Base;
-import org.metatransapps.commons.cfg.menu.Config_MenuMain_Base;
-import org.metatransapps.commons.cfg.menu.IConfigurationMenu_Main;
-import org.metatransapps.commons.menu.Activity_Menu_Main_Base;
+import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.cfg.menu.Config_MenuMain_Base;
+import org.metatrans.commons.cfg.menu.IConfigurationMenu_Main;
+import org.metatrans.commons.menu.Activity_Menu_Main_Base;
 
 import android.app.Activity;
 import android.content.Intent;

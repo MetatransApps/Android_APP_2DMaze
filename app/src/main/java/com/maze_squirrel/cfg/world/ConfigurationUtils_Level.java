@@ -1,8 +1,8 @@
 package com.maze_squirrel.cfg.world;
 
 
-import org.metatransapps.commons.cfg.ConfigurationUtils_Base;
-import org.metatransapps.commons.cfg.IConfigurationEntry;
+import org.metatrans.commons.cfg.ConfigurationUtils_Base;
+import org.metatrans.commons.cfg.IConfigurationEntry;
 
 
 public class ConfigurationUtils_Level extends ConfigurationUtils_Base {
