@@ -1,4 +1,4 @@
-rootProject.name = "Android_LIB_2DMaze"
+rootProject.name = "Android_APP_2DMaze"
 
 include ':app'
 include ':Android_LIB_Commons'
