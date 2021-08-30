@@ -1,8 +1,8 @@
 package com.maze_squirrel.cfg.world;
 
 
-import com.apps.mobile.android.commons.cfg.ConfigurationUtils_Base;
-import com.apps.mobile.android.commons.cfg.IConfigurationEntry;
+import org.metatransapps.commons.cfg.ConfigurationUtils_Base;
+import org.metatransapps.commons.cfg.IConfigurationEntry;
 
 
 public class ConfigurationUtils_Level extends ConfigurationUtils_Base {

@@ -3,10 +3,11 @@ package com.maze_squirrel.achievements;
 
 import android.content.Context;
 
-import com.apps.mobile.android.commons.achievements.AchievementsManager_Base;
-import com.apps.mobile.android.commons.app.Application_Base;
-import com.apps.mobile.android.commons.cfg.achievements.IConfigurationAchievements;
-import com.apps.mobile.android.commons.ui.Toast_Base;
+import org.metatransapps.commons.achievements.AchievementsManager_Base;
+import org.metatransapps.commons.app.Application_Base;
+import org.metatransapps.commons.cfg.achievements.IConfigurationAchievements;
+import org.metatransapps.commons.ui.Toast_Base;
+
 import com.maze_squirrel.cfg.achievements.Config_Achievement_ChangeColours;
 import com.maze_squirrel.cfg.achievements.Config_Achievement_MakeSteps_A01_250;
 import com.maze_squirrel.cfg.achievements.Config_Achievement_MakeSteps_A02_500;

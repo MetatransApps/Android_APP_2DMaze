@@ -5,16 +5,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.apps.mobile.android.commons.app.Application_Base;
-import com.apps.mobile.android.commons.app.Application_Base_Ads;
-import com.apps.mobile.android.commons.graphics2d.app.Application_2D_Base;
-import com.apps.mobile.android.commons.graphics2d.model.GameData;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Ground;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Moving;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Player;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Special;
-import com.apps.mobile.android.commons.graphics2d.model.entities.IEntity2D;
-import com.apps.mobile.android.commons.model.LevelResult_Base;
+import org.metatransapps.commons.app.Application_Base;
+import org.metatransapps.commons.app.Application_Base_Ads;
+import org.metatransapps.commons.graphics2d.app.Application_2D_Base;
+import org.metatransapps.commons.graphics2d.model.GameData;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Ground;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Moving;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Player;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Special;
+import org.metatransapps.commons.graphics2d.model.entities.IEntity2D;
+import org.metatransapps.commons.model.LevelResult_Base;
+
 import com.maze_squirrel.app.Application_Maze;
 import com.maze_squirrel.main.Activity_Result;
 import com.maze_squirrel.model.World_Labyrints;

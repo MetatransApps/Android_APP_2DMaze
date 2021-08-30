@@ -4,14 +4,15 @@ package com.maze_squirrel.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.metatransapps.commons.app.Application_Base;
+import org.metatransapps.commons.graphics2d.model.World;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Base;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Challenger;
+import org.metatransapps.commons.ui.utils.ScreenUtils;
+
 import android.content.Context;
 import android.graphics.RectF;
 
-import com.apps.mobile.android.commons.app.Application_Base;
-import com.apps.mobile.android.commons.graphics2d.model.World;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Base;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Challenger;
-import com.apps.mobile.android.commons.ui.utils.ScreenUtils;
 import com.maze_squirrel.cfg.world.IConfigurationWorld;
 import com.maze_squirrel.logic.provider2.Maze;
 import com.maze_squirrel.model.entities.Entity2D_Challenger_Labyrinth;

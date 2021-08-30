@@ -4,9 +4,10 @@ package com.maze_squirrel.model.entities;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
 
-import com.apps.mobile.android.commons.app.Application_Base;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Ground;
-import com.apps.mobile.android.commons.graphics2d.model.entities.IEntity2D;
+import org.metatransapps.commons.app.Application_Base;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Ground;
+import org.metatransapps.commons.graphics2d.model.entities.IEntity2D;
+
 import com.maze_squirrel.model.World_Labyrints;
 
 

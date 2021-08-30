@@ -1,20 +1,21 @@
 package com.maze_squirrel.app;
 
 
-import com.apps.mobile.android.commons.achievements.IAchievementsManager;
-import com.apps.mobile.android.commons.app.Application_Base;
-import com.apps.mobile.android.commons.app.Application_Base_Ads;
-import com.apps.mobile.android.commons.cfg.app.IAppConfig;
-import com.apps.mobile.android.commons.cfg.colours.ConfigurationUtils_Colours;
-import com.apps.mobile.android.commons.cfg.menu.ConfigurationUtils_Base_MenuMain;
-import com.apps.mobile.android.commons.engagement.ILeaderboardsProvider;
-import com.apps.mobile.android.commons.engagement.leaderboards.LeaderboardsProvider_Base;
-import com.apps.mobile.android.commons.events.api.IEventsManager;
-import com.apps.mobile.android.commons.graphics2d.app.Application_2D_Base;
-import com.apps.mobile.android.commons.graphics2d.model.GameData;
-import com.apps.mobile.android.commons.graphics2d.model.IWorld;
-import com.apps.mobile.android.commons.model.UserSettings_Base;
-import com.apps.mobile.android.commons.ui.utils.DebugUtils;
+import org.metatransapps.commons.achievements.IAchievementsManager;
+import org.metatransapps.commons.app.Application_Base;
+import org.metatransapps.commons.app.Application_Base_Ads;
+import org.metatransapps.commons.cfg.app.IAppConfig;
+import org.metatransapps.commons.cfg.colours.ConfigurationUtils_Colours;
+import org.metatransapps.commons.cfg.menu.ConfigurationUtils_Base_MenuMain;
+import org.metatransapps.commons.engagement.ILeaderboardsProvider;
+import org.metatransapps.commons.engagement.leaderboards.LeaderboardsProvider_Base;
+import org.metatransapps.commons.events.api.IEventsManager;
+import org.metatransapps.commons.graphics2d.app.Application_2D_Base;
+import org.metatransapps.commons.graphics2d.model.GameData;
+import org.metatransapps.commons.graphics2d.model.IWorld;
+import org.metatransapps.commons.model.UserSettings_Base;
+import org.metatransapps.commons.ui.utils.DebugUtils;
+
 import com.maze_squirrel.lib.BuildConfig;
 import com.maze_squirrel.achievements.AchievementsManager_MOS;
 import com.maze_squirrel.cfg.app.AppConfig_MOS;

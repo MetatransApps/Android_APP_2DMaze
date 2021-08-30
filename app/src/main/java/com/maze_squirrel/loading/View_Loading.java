@@ -4,10 +4,10 @@ package com.maze_squirrel.loading;
 import android.content.Context;
 import android.graphics.Bitmap;
 
+import org.metatransapps.commons.loading.View_Loading_Base;
+import org.metatransapps.commons.model.UserSettings_Base;
+import org.metatransapps.commons.ui.utils.BitmapUtils;
 
-import com.apps.mobile.android.commons.loading.View_Loading_Base;
-import com.apps.mobile.android.commons.model.UserSettings_Base;
-import com.apps.mobile.android.commons.ui.utils.BitmapUtils;
 import com.maze_squirrel.lib.R;
 
 

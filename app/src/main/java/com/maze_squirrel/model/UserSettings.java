@@ -5,11 +5,12 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import com.apps.mobile.android.commons.cfg.colours.IConfigurationColours;
+import org.metatransapps.commons.cfg.colours.IConfigurationColours;
+
 import com.maze_squirrel.cfg.world.ConfigurationUtils_Level;
 
 
-public class UserSettings extends com.apps.mobile.android.commons.graphics2d.model.UserSettings {
+public class UserSettings extends org.metatransapps.commons.graphics2d.model.UserSettings {
 	
 	
 	private static final long serialVersionUID = -612059325371084619L;

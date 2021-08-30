@@ -3,10 +3,11 @@ package com.maze_squirrel.model.entities;
 
 import java.util.List;
 
-import com.apps.mobile.android.commons.graphics2d.model.World;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Bullet;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Collectible;
-import com.apps.mobile.android.commons.graphics2d.model.entities.IEntity2D;
+import org.metatransapps.commons.graphics2d.model.World;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Bullet;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Collectible;
+import org.metatransapps.commons.graphics2d.model.entities.IEntity2D;
+
 import com.maze_squirrel.model.World_Labyrints;
 
 import android.graphics.Bitmap;

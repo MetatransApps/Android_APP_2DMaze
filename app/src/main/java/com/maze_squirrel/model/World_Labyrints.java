@@ -4,17 +4,18 @@ package com.maze_squirrel.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.metatransapps.commons.app.Application_Base;
+import org.metatransapps.commons.graphics2d.model.World;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Bullet;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Challenger;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Moving;
+import org.metatransapps.commons.graphics2d.model.entities.Entity2D_Special;
+import org.metatransapps.commons.graphics2d.model.entities.IEntity2D;
+import org.metatransapps.commons.ui.utils.BitmapUtils;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 
-import com.apps.mobile.android.commons.app.Application_Base;
-import com.apps.mobile.android.commons.graphics2d.model.World;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Bullet;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Challenger;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Moving;
-import com.apps.mobile.android.commons.graphics2d.model.entities.Entity2D_Special;
-import com.apps.mobile.android.commons.graphics2d.model.entities.IEntity2D;
-import com.apps.mobile.android.commons.ui.utils.BitmapUtils;
 import com.maze_squirrel.lib.R;
 import com.maze_squirrel.model.entities.Entity2D_Player_Labyrints;
 

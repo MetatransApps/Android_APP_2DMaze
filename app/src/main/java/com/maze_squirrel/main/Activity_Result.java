@@ -1,10 +1,11 @@
 package com.maze_squirrel.main;
 
 
-import com.apps.mobile.android.commons.ads.api.IAdsConfiguration;
-import com.apps.mobile.android.commons.graphics2d.main.Activity_Result_Base2D;
-import com.apps.mobile.android.commons.graphics2d.model.GameData;
-import com.apps.mobile.android.commons.main.View_Result;
+import org.metatransapps.commons.ads.api.IAdsConfiguration;
+import org.metatransapps.commons.graphics2d.main.Activity_Result_Base2D;
+import org.metatransapps.commons.graphics2d.model.GameData;
+import org.metatransapps.commons.main.View_Result;
+
 import com.maze_squirrel.lib.R;
 import com.maze_squirrel.app.Application_Maze;
 import com.maze_squirrel.model.UserSettings;

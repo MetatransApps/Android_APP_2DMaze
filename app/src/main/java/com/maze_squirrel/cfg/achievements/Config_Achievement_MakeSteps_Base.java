@@ -1,8 +1,9 @@
 package com.maze_squirrel.cfg.achievements;
 
 
-import com.apps.mobile.android.commons.app.Application_Base;
-import com.apps.mobile.android.commons.cfg.achievements.Config_Achievement_Base;
+import org.metatransapps.commons.app.Application_Base;
+import org.metatransapps.commons.cfg.achievements.Config_Achievement_Base;
+
 import com.maze_squirrel.lib.R;
 
 
