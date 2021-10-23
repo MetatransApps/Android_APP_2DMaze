@@ -52,6 +52,7 @@ public class EventsManager_MOS extends EventsManager_Base {
 		UserSettings settings = (UserSettings) settings1;
 		
 		int steps = data.total_count_steps;
+
 		if (steps > settings.best_scores) {
 			
 			settings.best_scores = steps;

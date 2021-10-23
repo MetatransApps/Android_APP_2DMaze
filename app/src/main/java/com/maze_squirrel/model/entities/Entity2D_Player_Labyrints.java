@@ -32,6 +32,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 	
 	
 	private Entity2D_Special gateEntity;
+
 	private Set<Entity2D_Ground> visited;
 	
 	
@@ -54,15 +55,6 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 	protected Class<? extends Activity> getActivityResult_Class() {
 		return Activity_Result.class;
 	}
-	
-	
-	/*
-	protected void killedFinal() {
-		IEventsManager eventsManager = Application_Base.getInstance().getEventsManager();
-		eventsManager.handleGameEvents_OnFinish(Application_Base.getInstance().getCurrentActivity(), getGameData(), Application_Base.getInstance().getUserSettings(), -1);
-		Application_Base.getInstance().storeGameData();
-	}
-	*/
 	
 	
 	@Override
@@ -107,10 +99,6 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 			getGameData().count_steps = 0;
 			
 			getGameData().world = Application_2D_Base.getInstance().createNewWorld();
-			
-			Application_Base.getInstance().storeGameData();
-			
-			Application_Base_Ads.getInstance().openInterstitial();
 		}
 	}
 
@@ -181,8 +169,6 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 	protected void killedFinal() {
 		
 		super.killedFinal();
-		
-		Application_Base_Ads.getInstance().openInterstitial();
 	}
 	
 	
