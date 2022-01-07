@@ -5,8 +5,8 @@ public abstract class Configuration_World_Base implements IConfigurationWorld {
 	
 	
 	private int id;
-	private int count_challengers;
-	private float spaceMultiplier;
+	protected int count_challengers;
+	protected float spaceMultiplier;
 	
 	
 	public Configuration_World_Base(int _id, int _count_challengers, float _spaceMultiplier) {

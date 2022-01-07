@@ -35,15 +35,15 @@ public abstract class Application_Maze extends Application_2D_Base {
 	
 	@Override
 	public void onCreate() {
-		
+
+		ConfigurationUtils_Level.createInstance();
+
 		super.onCreate();
 		//Called when the application is starting, before any other application objects have been created.
 		
 		System.out.println("Application_EC: onCreate called " + System.currentTimeMillis());
 		
 		ConfigurationUtils_Colours.class.getName();
-		
-		ConfigurationUtils_Level.createInstance();
 		
 		ConfigurationUtils_Base_MenuMain.createInstance();
 	}
