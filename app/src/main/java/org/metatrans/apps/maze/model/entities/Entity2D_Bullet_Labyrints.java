@@ -59,7 +59,7 @@ public class Entity2D_Bullet_Labyrints extends Entity2D_Bullet {
 	
 	
 	private void convert2collectible() {
-		RectF acornEnvelop = new RectF(getEvelop().left, getEvelop().top, getEvelop().left + getWorld().getCellSize(), getEvelop().top + getWorld().getCellSize());
+		RectF acornEnvelop = new RectF(getEnvelop().left, getEnvelop().top, getEnvelop().left + getWorld().getCellSize(), getEnvelop().top + getWorld().getCellSize());
 		Entity2D_Collectible acornEntity = new Entity2D_Collectible_Acorn_Labyrinths(acornEnvelop); 
 		
 		getWorld().addEntity(acornEntity);

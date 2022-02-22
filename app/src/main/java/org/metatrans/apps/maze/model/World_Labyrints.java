@@ -30,6 +30,11 @@ public class World_Labyrints extends World {
 	private static Bitmap bitmap_challenger;
 	private static Bitmap bitmap_acorn;
 	private static Bitmap bitmap_wall;
+	private static Bitmap bitmap_grass;
+	private static Bitmap bitmap_step_down;
+	private static Bitmap bitmap_step_up;
+	private static Bitmap bitmap_step_left;
+	private static Bitmap bitmap_step_right;
 	private static Bitmap bitmap_star;
 	private static Bitmap bitmap_key;
 	private static Bitmap bitmap_gate;
@@ -57,7 +62,12 @@ public class World_Labyrints extends World {
 		bitmap_acorn 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_acorn);
 		bitmap_player_l   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_l);
 		bitmap_player_r   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_r);
-		bitmap_wall 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
+		bitmap_wall 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_wall_4);
+		bitmap_grass		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_grass_4);
+		bitmap_step_down 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps4_down);
+		bitmap_step_up 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps4_up);
+		bitmap_step_left 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps4_left);
+		bitmap_step_right 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps4_right);
 		bitmap_star 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_star_gold);
 		bitmap_challenger 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
 		bitmap_key			= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_key);
@@ -161,6 +171,46 @@ public class World_Labyrints extends World {
 			initBitmaps();
 		}
 		return bitmap_wall;
+	}
+
+
+	public static Bitmap getBitmap_grass() {
+		if (bitmap_grass == null || bitmap_grass.isRecycled()) {
+			initBitmaps();
+		}
+		return bitmap_grass;
+	}
+
+
+	public static Bitmap getBitmap_step_down() {
+		if (bitmap_step_down == null || bitmap_step_down.isRecycled()) {
+			initBitmaps();
+		}
+		return bitmap_step_down;
+	}
+
+
+	public static Bitmap getBitmap_step_up() {
+		if (bitmap_step_up == null || bitmap_step_up.isRecycled()) {
+			initBitmaps();
+		}
+		return bitmap_step_up;
+	}
+
+
+	public static Bitmap getBitmap_step_left() {
+		if (bitmap_step_left == null || bitmap_step_left.isRecycled()) {
+			initBitmaps();
+		}
+		return bitmap_step_left;
+	}
+
+
+	public static Bitmap getBitmap_step_right() {
+		if (bitmap_step_right == null || bitmap_step_right.isRecycled()) {
+			initBitmaps();
+		}
+		return bitmap_step_right;
 	}
 
 

@@ -27,7 +27,7 @@ public class Entity2D_Ground_Wall_Labyrinths extends Entity2D_Ground {
 	
 	
 	public int getBitmapTransparency() {
-		return 99;
+		return 255;
 	}
 	
 	

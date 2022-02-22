@@ -8,8 +8,6 @@ import java.util.Set;
 import org.metatrans.apps.maze.app.Application_Maze;
 import org.metatrans.apps.maze.main.Activity_Result;
 import org.metatrans.apps.maze.model.World_Labyrints;
-import org.metatrans.commons.app.Application_Base;
-import org.metatrans.commons.app.Application_Base_Ads;
 import org.metatrans.commons.graphics2d.app.Application_2D_Base;
 import org.metatrans.commons.graphics2d.model.GameData;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Ground;
@@ -34,7 +32,9 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 
 	private Set<Entity2D_Ground> visited;
 	
-	
+	private Entity2D_Ground current_ground;
+
+
 	public Entity2D_Player_Labyrints(World_Labyrints _world, RectF _evelop, List<? extends IEntity2D> _killerEntities) {
 		
 		super(_world, _evelop, _world.getGroundEntities_SolidOnly(), _killerEntities);
@@ -68,11 +68,74 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 		super.nextMoment(takts);
 		
 		List<Entity2D_Ground> groundEntities_NotSolid = getWorld().getGroundEntities_NotSolidOnly();
+
 		for (Entity2D_Ground cur: groundEntities_NotSolid) {
-			if (RectF.intersects(getEvelop(), cur.getEvelop())) {
+
+			float player_center_x = getEnvelop().left + (getEnvelop().right - getEnvelop().left) / 2;
+			float player_center_y = getEnvelop().top  + (getEnvelop().bottom - getEnvelop().top) / 2;
+
+			if (cur.getEnvelop().contains(player_center_x, player_center_y)) {
+
 				if (!visited.contains(cur)) {
+
 					visited.add(cur);
+
 					getGameData().count_steps++;
+				}
+
+
+				if (current_ground == null) {
+
+					current_ground = cur;
+				}
+
+				if (cur != current_ground) {
+
+					float dx = cur.getEnvelop().left - current_ground.getEnvelop().left;
+					float dy = cur.getEnvelop().top - current_ground.getEnvelop().top;
+
+					int visit_direction = -1;
+
+					if (dx > dy) {
+
+						if (dx > 0) {
+
+							visit_direction = Entity2D_Ground_Empty_Labyrinths.DIRECTION_RIGHT;
+
+						} else /*if (dx < 0)*/ {
+
+							visit_direction = Entity2D_Ground_Empty_Labyrinths.DIRECTION_UP;
+
+						} /*else {
+
+							//Do nothing
+						}*/
+
+					} else if (dx < dy) {
+
+						if (dy > 0) {
+
+							visit_direction = Entity2D_Ground_Empty_Labyrinths.DIRECTION_DOWN;
+
+						} else /*if (dy < 0)*/ {
+
+							visit_direction = Entity2D_Ground_Empty_Labyrinths.DIRECTION_LEFT;
+
+						} /*else {
+
+							//Do nothing
+						}*/
+					} else {
+
+						//Do nothing
+					}
+
+					if (visit_direction != -1) {
+
+						((Entity2D_Ground_Empty_Labyrinths) current_ground).setDirection(visit_direction);
+					}
+
+					current_ground = cur;
 				}
 			}
 		}
@@ -103,7 +166,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 
 
 	protected boolean levelCompletedCondition() {
-		return hasKey() && RectF.intersects(getEvelop(), gateEntity.getEvelop());
+		return hasKey() && RectF.intersects(getEnvelop(), gateEntity.getEnvelop());
 	}
 	
 	
@@ -118,7 +181,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 				getGameData().count_bullets--;
 				
 				//RectF bulletEnvelop = new RectF(getEvelop().left + 5, getEvelop().top + 5, getEvelop().right - 5, getEvelop().bottom - 5);
-				RectF bulletEnvelop = new RectF(getEvelop().left + border, getEvelop().top + border, getEvelop().right - border, getEvelop().bottom - border);
+				RectF bulletEnvelop = new RectF(getEnvelop().left + border, getEnvelop().top + border, getEnvelop().right - border, getEnvelop().bottom - border);
 				Entity2D_Moving bulletEntity = new Entity2D_Bullet_Labyrints(getWorld(), bulletEnvelop, getBlockerEntities());
 				
 				int max_speed = getWorld().getMaxSpeed_BULLET();
@@ -141,7 +204,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 				getGameData().count_bullets--;
 				
 				//RectF bulletEnvelop = new RectF(getEvelop().left + 5, getEvelop().top + 5, getEvelop().right - 5, getEvelop().bottom - 5);
-				RectF bulletEnvelop = new RectF(getEvelop().left + border, getEvelop().top + border, getEvelop().right - border, getEvelop().bottom - border);
+				RectF bulletEnvelop = new RectF(getEnvelop().left + border, getEnvelop().top + border, getEnvelop().right - border, getEnvelop().bottom - border);
 				Entity2D_Moving bulletEntity = new Entity2D_Bullet_Labyrints(getWorld(), bulletEnvelop, getBlockerEntities());
 				
 				int max_speed = getWorld().getMaxSpeed_BULLET();
