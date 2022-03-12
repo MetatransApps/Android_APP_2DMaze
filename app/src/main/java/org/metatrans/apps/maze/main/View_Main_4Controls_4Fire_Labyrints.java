@@ -11,6 +11,7 @@ import android.graphics.RectF;
 import org.metatrans.apps.maze.app.Application_Maze;
 import org.metatrans.apps.maze.lib.R;
 import org.metatrans.apps.maze.menu.Activity_Menu_Main;
+import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.graphics2d.main.Activity_Main_Base2D;
 import org.metatrans.commons.graphics2d.ui.View_Main_4Controls_4Fire;
 import org.metatrans.commons.ui.TextArea;
@@ -62,9 +63,11 @@ public class View_Main_4Controls_4Fire_Labyrints extends View_Main_4Controls_4Fi
 	public View_Main_4Controls_4Fire_Labyrints(Activity_Main_Base2D activity) {
 		
 		super(activity);
-		
-		control_player = BitmapUtils.fromResource(activity, R.drawable.ic_control_squirrel);
-		control_shot = BitmapUtils.fromResource(activity, 	R.drawable.ic_control_acorn);
+
+		World_Labyrints world = (World_Labyrints) Application_Maze.getInstance().getGameData().world;
+
+		control_player = world.getBitmap_player_r();
+		control_shot = world.getBitmap_acorn();
 		
 		default_paint = new Paint();
 		
