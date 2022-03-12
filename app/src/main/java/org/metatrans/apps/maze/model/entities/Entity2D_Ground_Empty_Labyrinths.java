@@ -39,7 +39,7 @@ public class Entity2D_Ground_Empty_Labyrinths extends Entity2D_Ground {
 	
 	
 	public int getBitmapTransparency() {
-		return 255;
+		return 128;
 	}
 
 

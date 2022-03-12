@@ -58,23 +58,22 @@ public class World_Labyrints extends World {
 	private static void initBitmaps() {
 		
 		System.out.println("!EXPENSIVE OP: RE-INIT BITMAPS OF THE WORLD");
-		
-		bitmap_acorn 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_acorn);
+
 		bitmap_player_l   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_l);
 		bitmap_player_r   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_r);
-		bitmap_wall 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_wall_4);
-		/*bitmap_grass		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_grass_4);
-		bitmap_step_down 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps4_down);
-		bitmap_step_up 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps4_up);
-		bitmap_step_left 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps4_left);
-		bitmap_step_right 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps4_right);*/
-		bitmap_grass		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
-		bitmap_step_down 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
-		bitmap_step_up 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
-		bitmap_step_left 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
-		bitmap_step_right 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
-		bitmap_star 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_star_gold);
 		bitmap_challenger 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
+
+		bitmap_wall 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
+
+		bitmap_grass		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_ground_transparent);
+		bitmap_step_down 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_ground_transparent);
+		bitmap_step_up 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_ground_transparent);
+		bitmap_step_left 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_ground_transparent);
+		bitmap_step_right 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_ground_transparent);
+
+		bitmap_acorn 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_acorn);
+
+		bitmap_star 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_star_gold);
 		bitmap_key			= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_key);
 		bitmap_gate 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_gate);
 		bitmap_level		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_level);
