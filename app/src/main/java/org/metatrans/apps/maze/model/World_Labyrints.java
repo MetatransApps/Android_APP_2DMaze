@@ -25,21 +25,24 @@ public class World_Labyrints extends World {
 	private static final long serialVersionUID = 3276469433687306613L;
 	
 	
-	protected transient Bitmap bitmap_player_l;
-	protected transient Bitmap bitmap_player_r;
-	protected transient Bitmap bitmap_challenger;
-	protected transient Bitmap bitmap_acorn;
-	protected transient Bitmap bitmap_wall;
-	protected transient Bitmap bitmap_grass;
-	protected transient Bitmap bitmap_step_down;
-	protected transient Bitmap bitmap_step_up;
-	protected transient Bitmap bitmap_step_left;
-	protected transient Bitmap bitmap_step_right;
-	protected transient Bitmap bitmap_star;
-	protected transient Bitmap bitmap_key;
-	protected transient Bitmap bitmap_gate;
-	protected transient Bitmap bitmap_level;
-	protected transient Bitmap bitmap_paw;
+	protected static transient Bitmap bitmap_player_l;
+	protected static transient Bitmap bitmap_player_r;
+
+	protected static transient Bitmap bitmap_challenger_l;
+	protected static transient Bitmap bitmap_challenger_r;
+
+	protected static transient Bitmap bitmap_acorn;
+	protected static transient Bitmap bitmap_wall;
+	protected static transient Bitmap bitmap_grass;
+	protected static transient Bitmap bitmap_step_down;
+	protected static transient Bitmap bitmap_step_up;
+	protected static transient Bitmap bitmap_step_left;
+	protected static transient Bitmap bitmap_step_right;
+	protected static transient Bitmap bitmap_star;
+	protected static transient Bitmap bitmap_key;
+	protected static transient Bitmap bitmap_gate;
+	protected static transient Bitmap bitmap_level;
+	protected static transient Bitmap bitmap_paw;
 	
 	
 	private List<IEntity2D> killersEntities_forPlayer;
@@ -62,7 +65,9 @@ public class World_Labyrints extends World {
 
 		bitmap_player_l   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_l);
 		bitmap_player_r   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_r);
-		bitmap_challenger 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
+
+		bitmap_challenger_l = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
+		bitmap_challenger_r = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
 
 		bitmap_wall 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
 
@@ -163,11 +168,19 @@ public class World_Labyrints extends World {
 	}
 
 
-	public Bitmap getBitmap_challenger() {
-		if (bitmap_challenger == null || bitmap_challenger.isRecycled()) {
+	public Bitmap getBitmap_challenger_l() {
+		if (bitmap_challenger_l == null || bitmap_challenger_l.isRecycled()) {
 			initBitmaps();
 		}
-		return bitmap_challenger;
+		return bitmap_challenger_l;
+	}
+
+
+	public Bitmap getBitmap_challenger_r() {
+		if (bitmap_challenger_r == null || bitmap_challenger_r.isRecycled()) {
+			initBitmaps();
+		}
+		return bitmap_challenger_r;
 	}
 
 

@@ -17,18 +17,19 @@ public class Entity2D_Challenger_Labyrinth extends Entity2D_Challenger {
 	
 	
 	private static final long serialVersionUID = 5416967203188382917L;
-	
+
 	
 	public Entity2D_Challenger_Labyrinth(World _world, RectF _evelop,
 			List<Entity2D_Ground> _blockerEntities, List<? extends IEntity2D> _killerEntities) {
+
 		super(_world, _evelop, _blockerEntities, _killerEntities);
 		
 		setSpeed((Math.random() < 0.5 ? 1f : -1f) *_world.getMaxSpeed_CHALLENGER(), (Math.random() < 0.5 ? 1f : -1f) * _world.getMaxSpeed_CHALLENGER());
 	}
-	
-	
+
+
 	@Override
 	public Bitmap getBitmap() {
-		return ((World_Labyrints) getWorld()).getBitmap_challenger();
+		return (getDx() >= 0) ? ((World_Labyrints) getWorld()).getBitmap_challenger_r() : ((World_Labyrints) getWorld()).getBitmap_challenger_l();
 	}
 }

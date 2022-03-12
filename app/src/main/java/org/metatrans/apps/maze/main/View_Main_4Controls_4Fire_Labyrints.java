@@ -73,7 +73,7 @@ public class View_Main_4Controls_4Fire_Labyrints extends View_Main_4Controls_4Fi
 		int height = (int) ((8.0f * cell_size) / 10f);
 		int start_y = (int) ((1.0f * cell_size) / 10f);
 		
-		int width = (int) (1.7f * height);
+		int width = (int) (1.35f * height);
 		int width_icon = height;
 		int interval_x = cell_size / 3;
 		
@@ -83,7 +83,9 @@ public class View_Main_4Controls_4Fire_Labyrints extends View_Main_4Controls_4Fi
 		int[] screen_size = ScreenUtils.getScreenSize((Activity) getContext());
 		int screen_width = Math.max(screen_size[0], screen_size[1]);
 		int start_x = (int) ((screen_width - 5 * interval_x - 4 * width - extend_factor_bullets * width - extend_factor_steps * width) / 2f);
-		
+
+		start_x = (int) (start_x / 1.3);
+
 		int border_icon = start_y;
 		
 		
