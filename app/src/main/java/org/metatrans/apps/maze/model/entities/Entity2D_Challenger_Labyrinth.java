@@ -29,6 +29,6 @@ public class Entity2D_Challenger_Labyrinth extends Entity2D_Challenger {
 	
 	@Override
 	public Bitmap getBitmap() {
-		return World_Labyrints.getBitmap_challenger();
+		return ((World_Labyrints) getWorld()).getBitmap_challenger();
 	}
 }

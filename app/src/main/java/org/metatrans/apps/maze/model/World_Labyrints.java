@@ -25,24 +25,25 @@ public class World_Labyrints extends World {
 	private static final long serialVersionUID = 3276469433687306613L;
 	
 	
-	private static Bitmap bitmap_player_l;
-	private static Bitmap bitmap_player_r;
-	private static Bitmap bitmap_challenger;
-	private static Bitmap bitmap_acorn;
-	private static Bitmap bitmap_wall;
-	private static Bitmap bitmap_grass;
-	private static Bitmap bitmap_step_down;
-	private static Bitmap bitmap_step_up;
-	private static Bitmap bitmap_step_left;
-	private static Bitmap bitmap_step_right;
-	private static Bitmap bitmap_star;
-	private static Bitmap bitmap_key;
-	private static Bitmap bitmap_gate;
-	private static Bitmap bitmap_level;
-	private static Bitmap bitmap_paw;
+	protected transient Bitmap bitmap_player_l;
+	protected transient Bitmap bitmap_player_r;
+	protected transient Bitmap bitmap_challenger;
+	protected transient Bitmap bitmap_acorn;
+	protected transient Bitmap bitmap_wall;
+	protected transient Bitmap bitmap_grass;
+	protected transient Bitmap bitmap_step_down;
+	protected transient Bitmap bitmap_step_up;
+	protected transient Bitmap bitmap_step_left;
+	protected transient Bitmap bitmap_step_right;
+	protected transient Bitmap bitmap_star;
+	protected transient Bitmap bitmap_key;
+	protected transient Bitmap bitmap_gate;
+	protected transient Bitmap bitmap_level;
+	protected transient Bitmap bitmap_paw;
 	
 	
 	private List<IEntity2D> killersEntities_forPlayer;
+	
 	private List<IEntity2D> killersEntities_forChallengers;
 	
 	
@@ -55,7 +56,7 @@ public class World_Labyrints extends World {
 	}
 	
 	
-	private static void initBitmaps() {
+	protected void initBitmaps() {
 		
 		System.out.println("!EXPENSIVE OP: RE-INIT BITMAPS OF THE WORLD");
 
@@ -138,7 +139,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_acorn() {
+	public Bitmap getBitmap_acorn() {
 		if (bitmap_acorn == null || bitmap_acorn.isRecycled()) {
 			initBitmaps();
 		}
@@ -146,7 +147,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_player_l() {
+	public Bitmap getBitmap_player_l() {
 		if (bitmap_player_l == null || bitmap_player_l.isRecycled()) {
 			initBitmaps();
 		}
@@ -154,7 +155,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_player_r() {
+	public Bitmap getBitmap_player_r() {
 		if (bitmap_player_r == null || bitmap_player_r.isRecycled()) {
 			initBitmaps();
 		}
@@ -162,7 +163,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_challenger() {
+	public Bitmap getBitmap_challenger() {
 		if (bitmap_challenger == null || bitmap_challenger.isRecycled()) {
 			initBitmaps();
 		}
@@ -170,7 +171,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_wall() {
+	public Bitmap getBitmap_wall() {
 		if (bitmap_wall == null || bitmap_wall.isRecycled()) {
 			initBitmaps();
 		}
@@ -178,7 +179,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_grass() {
+	public Bitmap getBitmap_grass() {
 		if (bitmap_grass == null || bitmap_grass.isRecycled()) {
 			initBitmaps();
 		}
@@ -186,7 +187,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_step_down() {
+	public Bitmap getBitmap_step_down() {
 		if (bitmap_step_down == null || bitmap_step_down.isRecycled()) {
 			initBitmaps();
 		}
@@ -194,7 +195,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_step_up() {
+	public Bitmap getBitmap_step_up() {
 		if (bitmap_step_up == null || bitmap_step_up.isRecycled()) {
 			initBitmaps();
 		}
@@ -202,7 +203,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_step_left() {
+	public Bitmap getBitmap_step_left() {
 		if (bitmap_step_left == null || bitmap_step_left.isRecycled()) {
 			initBitmaps();
 		}
@@ -210,7 +211,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_step_right() {
+	public Bitmap getBitmap_step_right() {
 		if (bitmap_step_right == null || bitmap_step_right.isRecycled()) {
 			initBitmaps();
 		}
@@ -218,7 +219,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_star() {
+	public Bitmap getBitmap_star() {
 		if (bitmap_star == null || bitmap_star.isRecycled()) {
 			initBitmaps();
 		}
@@ -226,7 +227,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_key() {
+	public Bitmap getBitmap_key() {
 		if (bitmap_key == null || bitmap_key.isRecycled()) {
 			initBitmaps();
 		}
@@ -234,7 +235,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_gate() {
+	public Bitmap getBitmap_gate() {
 		if (bitmap_gate == null || bitmap_gate.isRecycled()) {
 			initBitmaps();
 		}
@@ -242,7 +243,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_level() {
+	public Bitmap getBitmap_level() {
 		if (bitmap_level == null || bitmap_level.isRecycled()) {
 			initBitmaps();
 		}
@@ -250,7 +251,7 @@ public class World_Labyrints extends World {
 	}
 
 
-	public static Bitmap getBitmap_paw() {
+	public Bitmap getBitmap_paw() {
 		if (bitmap_paw == null || bitmap_paw.isRecycled()) {
 			initBitmaps();
 		}

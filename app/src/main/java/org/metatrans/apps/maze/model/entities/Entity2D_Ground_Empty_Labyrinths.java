@@ -4,6 +4,7 @@ package org.metatrans.apps.maze.model.entities;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
 
+import org.metatrans.apps.maze.app.Application_Maze;
 import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Ground;
@@ -48,19 +49,19 @@ public class Entity2D_Ground_Empty_Labyrinths extends Entity2D_Ground {
 		switch (direction) {
 
 			case DIRECTION_NONE:
-				return World_Labyrints.getBitmap_grass();
+				return ((World_Labyrints) Application_Maze.getInstance().getWorld()).getBitmap_grass();
 
 			case DIRECTION_DOWN:
-				return World_Labyrints.getBitmap_step_down();
+				return ((World_Labyrints) Application_Maze.getInstance().getWorld()).getBitmap_step_down();
 
 			case DIRECTION_UP:
-				return World_Labyrints.getBitmap_step_up();
+				return ((World_Labyrints) Application_Maze.getInstance().getWorld()).getBitmap_step_up();
 
 			case DIRECTION_LEFT:
-				return World_Labyrints.getBitmap_step_left();
+				return ((World_Labyrints) Application_Maze.getInstance().getWorld()).getBitmap_step_left();
 
 			case DIRECTION_RIGHT:
-				return World_Labyrints.getBitmap_step_right();
+				return ((World_Labyrints) Application_Maze.getInstance().getWorld()).getBitmap_step_right();
 
 			default:
 				throw new IllegalStateException("direction=" + direction);

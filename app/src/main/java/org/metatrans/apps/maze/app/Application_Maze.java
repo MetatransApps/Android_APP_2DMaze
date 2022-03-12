@@ -2,17 +2,16 @@ package org.metatrans.apps.maze.app;
 
 
 import org.metatrans.apps.maze.achievements.AchievementsManager_MOS;
-import org.metatrans.apps.maze.cfg.app.AppConfig_MOS;
 import org.metatrans.apps.maze.cfg.world.ConfigurationUtils_Level;
 import org.metatrans.apps.maze.events.EventsManager_MOS;
 import org.metatrans.apps.maze.lib.BuildConfig;
 import org.metatrans.apps.maze.main.Activity_Result;
 import org.metatrans.apps.maze.model.UserSettings;
 import org.metatrans.apps.maze.model.WorldGenerator_Labyrints;
+import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.achievements.IAchievementsManager;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.app.Application_Base_Ads;
-import org.metatrans.commons.cfg.app.IAppConfig;
 import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
 import org.metatrans.commons.cfg.menu.ConfigurationUtils_Base_MenuMain;
 import org.metatrans.commons.engagement.ILeaderboardsProvider;
@@ -26,9 +25,7 @@ import org.metatrans.commons.ui.utils.DebugUtils;
 
 
 public abstract class Application_Maze extends Application_2D_Base {
-	
-	
-	protected IAppConfig appConfig = new AppConfig_MOS();
+
 	
 	private static final String[] KEYWORDS = new String[] {"org.metatrans.apps.maze", "labyrinths", "squirrel", "escape"};
 	
@@ -47,14 +44,13 @@ public abstract class Application_Maze extends Application_2D_Base {
 		
 		ConfigurationUtils_Base_MenuMain.createInstance();
 	}
-	
-	
-	@Override
-	public IAppConfig getAppConfig() {
-		return appConfig;
+
+
+	public World_Labyrints getWorld() {
+		return (World_Labyrints) ((GameData) getInstance().getGameData()).world;
 	}
-	
-	
+
+
 	public String[] getKeywords() {
 		return KEYWORDS;
 	}
@@ -77,12 +73,13 @@ public abstract class Application_Maze extends Application_2D_Base {
 	public IWorld createNewWorld() {
 		 return WorldGenerator_Labyrints.generate(this, ConfigurationUtils_Level.getInstance().getConfigByID(Application_Base.getInstance().getUserSettings().modeID));
 	}
-	
+
+
 	public static Application_Maze getInstance() {
 		return (Application_Maze) Application_Base_Ads.getInstance();
 	}
-	
-	
+
+
 	@Override
 	protected IAchievementsManager createAchievementsManager() {
 		return new AchievementsManager_MOS(this);

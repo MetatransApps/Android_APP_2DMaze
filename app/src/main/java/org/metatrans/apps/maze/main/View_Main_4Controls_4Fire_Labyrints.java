@@ -11,7 +11,6 @@ import android.graphics.RectF;
 import org.metatrans.apps.maze.app.Application_Maze;
 import org.metatrans.apps.maze.lib.R;
 import org.metatrans.apps.maze.menu.Activity_Menu_Main;
-import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.graphics2d.main.Activity_Main_Base2D;
 import org.metatrans.commons.graphics2d.ui.View_Main_4Controls_4Fire;
 import org.metatrans.commons.ui.TextArea;
@@ -158,42 +157,42 @@ public class View_Main_4Controls_4Fire_Labyrints extends View_Main_4Controls_4Fi
 		
 		
 		int level = ((Application_Maze)Application_Maze.getInstance()).getUserSettings().modeID;
-		canvas.drawBitmap(World_Labyrints.getBitmap_level(), null, rect_level_icon, default_paint);
+		canvas.drawBitmap(Application_Maze.getInstance().getWorld().getBitmap_level(), null, rect_level_icon, default_paint);
 		textarea_level.setColour_Text(Color.GREEN);
 		textarea_level.setText("" + level + " ");
 		textarea_level.draw(canvas);
 		
 		
 		int lives = ((Application_Maze)Application_Maze.getInstance()).getGameData().count_lives;
-		canvas.drawBitmap(World_Labyrints.getBitmap_player_l(), null, rect_lives_icon, default_paint);
+		canvas.drawBitmap(Application_Maze.getInstance().getWorld().getBitmap_player_l(), null, rect_lives_icon, default_paint);
 		textarea_lives.setColour_Text(lives == 0 ? Color.RED : Color.GREEN);
 		textarea_lives.setText("x " + lives + " ");
 		textarea_lives.draw(canvas);
 		
 		
 		boolean hasKey = ((Application_Maze)Application_Maze.getInstance()).getGameData().world.getPlayerEntity().hasKey();
-		canvas.drawBitmap(World_Labyrints.getBitmap_key(), null, rect_key_icon, default_paint);
+		canvas.drawBitmap(Application_Maze.getInstance().getWorld().getBitmap_key(), null, rect_key_icon, default_paint);
 		textarea_key.setColour_Text(hasKey ? Color.GREEN : Color.RED);
 		textarea_key.setText("x " + (hasKey ? "1" : "0") + " ");
 		textarea_key.draw(canvas);
 		
 		
 		int stars = ((Application_Maze)Application_Maze.getInstance()).getGameData().count_stars;
-		canvas.drawBitmap(World_Labyrints.getBitmap_star(), null, rect_stars_icon, default_paint);
+		canvas.drawBitmap(Application_Maze.getInstance().getWorld().getBitmap_star(), null, rect_stars_icon, default_paint);
 		textarea_stars.setColour_Text(stars == 0 ? Color.GRAY : Color.GREEN);
 		textarea_stars.setText("x " + stars + " ");
 		textarea_stars.draw(canvas);
 		
 		
 		int bullets = ((Application_Maze)Application_Maze.getInstance()).getGameData().count_bullets;
-		canvas.drawBitmap(World_Labyrints.getBitmap_acorn(), null, rect_bullets_icon, default_paint);
+		canvas.drawBitmap(Application_Maze.getInstance().getWorld().getBitmap_acorn(), null, rect_bullets_icon, default_paint);
 		textarea_bullets.setColour_Text(bullets == 0 ? Color.RED : Color.GREEN);
 		textarea_bullets.setText("x " + bullets + " ");
 		textarea_bullets.draw(canvas);
 		
 		
 		int steps = ((Application_Maze)Application_Maze.getInstance()).getGameData().total_count_steps + ((Application_Maze) Application_Maze.getInstance()).getGameData().count_steps;
-		canvas.drawBitmap(World_Labyrints.getBitmap_paw(), null, rect_steps_icon, default_paint);
+		canvas.drawBitmap(Application_Maze.getInstance().getWorld().getBitmap_paw(), null, rect_steps_icon, default_paint);
 		textarea_steps.setColour_Text(Color.GREEN);
 		textarea_steps.setText("x " + steps + " ");
 		textarea_steps.draw(canvas);

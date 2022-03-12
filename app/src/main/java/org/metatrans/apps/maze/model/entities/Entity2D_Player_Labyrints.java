@@ -43,8 +43,8 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 		
 		visited = new HashSet<Entity2D_Ground>();
 	}
-	
-	
+
+
 	@Override
 	protected World_Labyrints getWorld() {
 		return (World_Labyrints) super.getWorld();
@@ -58,7 +58,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 	
 	@Override
 	public Bitmap getBitmap() {
-		return (getDx() >= 0) ? World_Labyrints.getBitmap_player_r() : World_Labyrints.getBitmap_player_l();
+		return (getDx() >= 0) ? ((World_Labyrints) getWorld()).getBitmap_player_r() : ((World_Labyrints) getWorld()).getBitmap_player_l();
 	}
 	
 	

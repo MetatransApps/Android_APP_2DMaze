@@ -28,7 +28,7 @@ public class Entity2D_Bullet_Labyrints extends Entity2D_Bullet {
 	
 	@Override
 	public Bitmap getBitmap() {
-		return World_Labyrints.getBitmap_acorn();
+		return ((World_Labyrints) getWorld()).getBitmap_acorn();
 	}
 	
 	
