@@ -9,13 +9,11 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 
 import org.metatrans.apps.maze.app.Application_Maze;
-import org.metatrans.apps.maze.lib.R;
 import org.metatrans.apps.maze.menu.Activity_Menu_Main;
 import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.graphics2d.main.Activity_Main_Base2D;
 import org.metatrans.commons.graphics2d.ui.View_Main_4Controls_4Fire;
 import org.metatrans.commons.ui.TextArea;
-import org.metatrans.commons.ui.utils.BitmapUtils;
 import org.metatrans.commons.ui.utils.ScreenUtils;
 
 

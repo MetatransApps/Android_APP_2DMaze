@@ -9,6 +9,9 @@ import org.metatrans.apps.maze.lib.R;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.menu.Config_MenuMain_Base;
 import org.metatrans.commons.cfg.menu.IConfigurationMenu_Main;
+import org.metatrans.commons.graphics2d.menu.Activity_Menu_Joystick;
+import org.metatrans.commons.graphics2d.menu.ConfigurationUtils_Joysticks;
+import org.metatrans.commons.graphics2d.model.UserSettings;
 import org.metatrans.commons.menu.Activity_Menu_Main_Base;
 
 import android.app.Activity;
@@ -19,8 +22,9 @@ public class Activity_Menu_Main extends Activity_Menu_Main_Base {
 
 
 	public static int CFG_MENU_LEVELS			 		= 15;
-	public static int CFG_MENU_RESULT			 		= 16;
-	public static int CFG_MENU_ACHIEVEMENTS		 		= 17;
+	public static int CFG_MENU_JOYSTICK			 		= 16;
+	public static int CFG_MENU_RESULT			 		= 17;
+	public static int CFG_MENU_ACHIEVEMENTS		 		= 18;
 
 
 	@Override
@@ -34,6 +38,49 @@ public class Activity_Menu_Main extends Activity_Menu_Main_Base {
 
 
 		List<IConfigurationMenu_Main> result = new ArrayList<IConfigurationMenu_Main>();
+
+		result.add(new Config_MenuMain_Base() {
+
+			@Override
+			public int getName() {
+				return R.string.menu_joystick;
+			}
+
+			@Override
+			public int getIconResID() {
+				return R.drawable.joystick_transparent;
+			}
+
+			@Override
+			public int getID() {
+				return CFG_MENU_JOYSTICK;
+			}
+
+			@Override
+			public String getDescription_String() {
+				return ConfigurationUtils_Joysticks.getConfigByID(((UserSettings)((Application_Base) getApplication()).getUserSettings()).movejoystick_side).getName_String();
+			}
+
+			@Override
+			public Runnable getAction() {
+
+				return new Runnable() {
+
+					@Override
+					public void run() {
+						Activity currentActivity = Application_Base.getInstance().getCurrentActivity();
+
+						if (currentActivity != null) {
+
+							currentActivity.finish();
+
+							Intent i = new Intent(currentActivity, Activity_Menu_Joystick.class);
+							currentActivity.startActivity(i);
+						}
+					}
+				};
+			}
+		});
 
 
 		result.add(new Config_MenuMain_Base() {
@@ -134,7 +181,7 @@ public class Activity_Menu_Main extends Activity_Menu_Main_Base {
 
 			@Override
 			public int getID() {
-				return Activity_Menu_Main.CFG_MENU_ACHIEVEMENTS;
+				return CFG_MENU_ACHIEVEMENTS;
 			}
 
 			@Override
