@@ -15,6 +15,7 @@ public class Activity_Main extends Activity_Main_Base2D implements IActivityInte
 	
 	@Override
 	protected View createMainView() {
+
 		return new View_Main_4Controls_4Fire_Labyrints(this);
 	}
 
