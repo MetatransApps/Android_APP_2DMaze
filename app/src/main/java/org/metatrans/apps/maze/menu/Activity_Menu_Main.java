@@ -40,6 +40,49 @@ public class Activity_Menu_Main extends Activity_Menu_Main_Base {
 		List<IConfigurationMenu_Main> result = new ArrayList<IConfigurationMenu_Main>();
 
 		result.add(new Config_MenuMain_Base() {
+			
+			@Override
+			public int getName() {
+				return R.string.levels;
+			}
+			
+			@Override
+			public int getIconResID() {
+				return R.drawable.ic_level;
+			}
+			
+			@Override
+			public int getID() {
+				return CFG_MENU_LEVELS;
+			}
+			
+			@Override
+			public String getDescription_String() {
+				return ConfigurationUtils_Level.getInstance().getConfigByID(Application_Base.getInstance().getUserSettings().modeID).getName_String();
+			}
+			
+			@Override
+			public Runnable getAction() {
+				
+				return new Runnable() {
+					
+					@Override
+					public void run() {
+						Activity currentActivity = Application_Base.getInstance().getCurrentActivity();
+						if (currentActivity != null) {
+							
+							currentActivity.finish();
+							
+							Intent i = new Intent(currentActivity, Activity_Menu_Levels.class);
+							currentActivity.startActivity(i);
+						}
+					}
+				};
+			}
+		});
+
+
+		result.add(new Config_MenuMain_Base() {
 
 			@Override
 			public int getName() {
@@ -75,49 +118,6 @@ public class Activity_Menu_Main extends Activity_Menu_Main_Base {
 							currentActivity.finish();
 
 							Intent i = new Intent(currentActivity, Activity_Menu_Joystick.class);
-							currentActivity.startActivity(i);
-						}
-					}
-				};
-			}
-		});
-
-
-		result.add(new Config_MenuMain_Base() {
-			
-			@Override
-			public int getName() {
-				return R.string.levels;
-			}
-			
-			@Override
-			public int getIconResID() {
-				return R.drawable.ic_level;
-			}
-			
-			@Override
-			public int getID() {
-				return CFG_MENU_LEVELS;
-			}
-			
-			@Override
-			public String getDescription_String() {
-				return ConfigurationUtils_Level.getInstance().getConfigByID(Application_Base.getInstance().getUserSettings().modeID).getName_String();
-			}
-			
-			@Override
-			public Runnable getAction() {
-				
-				return new Runnable() {
-					
-					@Override
-					public void run() {
-						Activity currentActivity = Application_Base.getInstance().getCurrentActivity();
-						if (currentActivity != null) {
-							
-							currentActivity.finish();
-							
-							Intent i = new Intent(currentActivity, Activity_Menu_Levels.class);
 							currentActivity.startActivity(i);
 						}
 					}
