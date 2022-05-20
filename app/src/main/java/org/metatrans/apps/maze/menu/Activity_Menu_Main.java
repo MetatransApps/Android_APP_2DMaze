@@ -92,7 +92,7 @@ public class Activity_Menu_Main extends Activity_Menu_Main_Base {
 			
 			@Override
 			public int getIconResID() {
-				return R.drawable.ic_rainbow;
+				return R.drawable.ic_level;
 			}
 			
 			@Override

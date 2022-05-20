@@ -7,11 +7,12 @@ import android.graphics.RectF;
 import org.metatrans.apps.maze.app.Application_Maze;
 import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.graphics2d.model.World;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Ground;
 import org.metatrans.commons.graphics2d.model.entities.IEntity2D;
 
 
-public class Entity2D_Ground_Empty_Labyrinths extends Entity2D_Ground {
+public class Entity2D_Ground_Empty_Labyrinths extends Entity2D_Terrain_Labyrinths {
 	
 	
 	private static final long serialVersionUID = -434579107405800961L;
@@ -26,9 +27,9 @@ public class Entity2D_Ground_Empty_Labyrinths extends Entity2D_Ground {
 	private int direction;
 
 
-	public Entity2D_Ground_Empty_Labyrinths(RectF _evelop) {
+	public Entity2D_Ground_Empty_Labyrinths(World world, RectF _evelop, int _index_x, int _index_y) {
 
-		super(_evelop, IEntity2D.SUBTYPE_GROUND_EMPTY);
+		super(world, _evelop, SUBTYPE_GROUND_EMPTY, _index_x,_index_y);
 
 		direction = DIRECTION_NONE;
 	}

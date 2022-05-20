@@ -32,7 +32,8 @@ public class World_Labyrints extends World {
 	protected static transient Bitmap bitmap_challenger_r;
 
 	protected static transient Bitmap bitmap_acorn;
-	protected static transient Bitmap bitmap_wall;
+	protected static transient Bitmap bitmap_wall_1;
+	protected static transient Bitmap bitmap_wall_2;
 	protected static transient Bitmap bitmap_grass;
 	protected static transient Bitmap bitmap_step_down;
 	protected static transient Bitmap bitmap_step_up;
@@ -50,9 +51,9 @@ public class World_Labyrints extends World {
 	private List<IEntity2D> killersEntities_forChallengers;
 	
 	
-	public World_Labyrints(Context _activity) {
+	public World_Labyrints(Context _activity, int maze_size_x, int maze_size_y) {
 		
-		super(_activity);
+		super(_activity, maze_size_x, maze_size_y);
 		
 		killersEntities_forPlayer 		= new ArrayList<IEntity2D>();
 		killersEntities_forChallengers 	= new ArrayList<IEntity2D>();
@@ -69,7 +70,8 @@ public class World_Labyrints extends World {
 		bitmap_challenger_l = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
 		bitmap_challenger_r = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
 
-		bitmap_wall 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
+		bitmap_wall_1 = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
+		bitmap_wall_2 = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_wall_green_3);
 
 		bitmap_grass		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_ground_transparent);
 		bitmap_step_down 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_ground_transparent);
@@ -184,11 +186,19 @@ public class World_Labyrints extends World {
 	}
 
 
-	public Bitmap getBitmap_wall() {
-		if (bitmap_wall == null || bitmap_wall.isRecycled()) {
+	public Bitmap getBitmap_wall_1() {
+		if (bitmap_wall_1 == null || bitmap_wall_1.isRecycled()) {
 			initBitmaps();
 		}
-		return bitmap_wall;
+		return bitmap_wall_1;
+	}
+
+
+	public Bitmap getBitmap_wall_2() {
+		if (bitmap_wall_2 == null || bitmap_wall_2.isRecycled()) {
+			initBitmaps();
+		}
+		return bitmap_wall_2;
 	}
 
 

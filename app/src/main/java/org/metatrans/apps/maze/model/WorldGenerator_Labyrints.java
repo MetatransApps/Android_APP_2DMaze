@@ -11,6 +11,7 @@ import org.metatrans.apps.maze.model.entities.Entity2D_Collectible_Acorn_Labyrin
 import org.metatrans.apps.maze.model.entities.Entity2D_Collectible_Key_Labyrinths;
 import org.metatrans.apps.maze.model.entities.Entity2D_Collectible_Star_Labyrinths;
 import org.metatrans.apps.maze.model.entities.Entity2D_Ground_Empty_Labyrinths;
+import org.metatrans.apps.maze.model.entities.Entity2D_Ground_Wall_Border_Labyrinths;
 import org.metatrans.apps.maze.model.entities.Entity2D_Ground_Wall_Labyrinths;
 import org.metatrans.apps.maze.model.entities.Entity2D_Player_Labyrints;
 import org.metatrans.apps.maze.model.entities.Entity2D_Special_Gate_Labyrints;
@@ -54,8 +55,6 @@ public class WorldGenerator_Labyrints {
 		
 		System.out.println("GAMEDATA GENERATION");
 		
-		World_Labyrints world = new World_Labyrints(activity);
-		
 		int[] screen_size = ScreenUtils.getScreenSize(activity);
 		int main_width = (int) (cfg_world.getSpaceMultiplier() * Math.max(screen_size[0], screen_size[1]));
 		int main_height = (int) (cfg_world.getSpaceMultiplier() * Math.min(screen_size[0], screen_size[1]));
@@ -78,27 +77,57 @@ public class WorldGenerator_Labyrints {
 		float size_x = main_width / (float) maze[0].length;
 		float size_y = main_height / (float) maze.length;
 		float cell_size = Math.min(size_x, size_y);
-		
+
+		World_Labyrints world = new World_Labyrints(activity, maze[0].length, maze.length);
+
 		world.setCellSize(cell_size);
 		//world.setCellsCount(count_cells_x, count_cells_y);
-		
+
+		boolean flowers_inside = false;
+
 		//List<Entity2D_Ground> groundEntities = new ArrayList<Entity2D_Ground>();
 		for (int r = 0; r < maze.length; r++) {
 			for (int c = 0; c < maze[r].length; c++) {
-				
+
 				float x = c * size_x;
 				float y = r * size_y;
-				
+
 				RectF envelop = new RectF(x, y, (x + size_x), (y + size_y));
-				
+
+				//Ground
 				if (maze[r][c] == 0) {
-					
-					world.addEntity(new Entity2D_Ground_Empty_Labyrinths(envelop));
-					
-				} else {
-					
-					world.addEntity(new Entity2D_Ground_Wall_Labyrinths(envelop));
-					
+
+					world.addEntity(new Entity2D_Ground_Empty_Labyrinths(world, envelop, c, r));
+
+				} else { //Walls
+
+					boolean is_border = 	r == 0
+							|| r == maze.length - 1
+							|| c == 0
+							|| c == maze[r].length - 1;
+
+					if (flowers_inside) {
+
+						if (is_border) {
+
+							world.addEntity(new Entity2D_Ground_Wall_Border_Labyrinths(world, envelop, c, r));
+
+						} else {
+
+							world.addEntity(new Entity2D_Ground_Wall_Labyrinths(world, envelop, c, r));
+						}
+
+					} else {
+
+						if (is_border) {
+
+							world.addEntity(new Entity2D_Ground_Wall_Labyrinths(world, envelop, c, r));
+
+						} else {
+
+							world.addEntity(new Entity2D_Ground_Wall_Border_Labyrinths(world, envelop, c, r));
+						}
+					}
 				}
 			}
 		}
@@ -129,8 +158,14 @@ public class WorldGenerator_Labyrints {
 		buffer_entities.remove(cell_center_star);
 		
 		
-		world.addEntity(new Entity2D_Collectible_Key_Labyrinths(new RectF(cell_center_key.getX(), cell_center_key.getY(), cell_center_key.getX() + 0.9f * cell_size, cell_center_key.getY() + 0.9f * cell_size))); 
-		world.addEntity(new Entity2D_Special_Gate_Labyrints(new RectF(cell_bottom_right.getX(), cell_bottom_right.getY(), cell_bottom_right.getX() + 1f * cell_size, cell_bottom_right.getY() + 1f * cell_size)));
+		world.addEntity(new Entity2D_Collectible_Key_Labyrinths(new RectF(cell_center_key.getX(), cell_center_key.getY(), cell_center_key.getX() + 1f * cell_size, cell_center_key.getY() + 1f * cell_size)));
+		world.addEntity(new Entity2D_Special_Gate_Labyrints(
+						new RectF(cell_bottom_right.getX() - 0.3f * cell_size,
+								cell_bottom_right.getY() - 0.2f * cell_size,
+								cell_bottom_right.getX() + 1.3f * cell_size,
+								cell_bottom_right.getY() + 1.0f * cell_size)
+				)
+		);
 		world.addEntity(new Entity2D_Collectible_Star_Labyrinths(new RectF(cell_top_right.getX(), cell_top_right.getY(), cell_top_right.getX() + 1f * cell_size, cell_top_right.getY() + 1f * cell_size)));
 		world.addEntity(new Entity2D_Collectible_Star_Labyrinths(new RectF(cell_bottom_left.getX(), cell_bottom_left.getY(), cell_bottom_left.getX() + 1f * cell_size, cell_bottom_left.getY() + 1f * cell_size)));
 		world.addEntity(new Entity2D_Collectible_Star_Labyrinths(new RectF(cell_center_star.getX(), cell_center_star.getY(), cell_center_star.getX() + 1f * cell_size, cell_center_star.getY() + 1f * cell_size)));
