@@ -51,9 +51,10 @@ public class View_Loading extends View_Loading_Base {
 		
 		int[] images = new int[] {
 				R.drawable.ic_acorn,
-				R.drawable.ic_challenger,
-				//R.drawable.ic_player6,
-				//R.drawable.ic_player7,
+				R.drawable.ic_challenger_l,
+				R.drawable.ic_challenger_r,
+				R.drawable.ic_player7_l,
+				R.drawable.ic_player7_r,
 			};
 		
 		

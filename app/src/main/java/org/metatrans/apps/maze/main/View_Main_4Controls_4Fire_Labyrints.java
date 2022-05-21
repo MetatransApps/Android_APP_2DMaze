@@ -11,7 +11,6 @@ import android.graphics.RectF;
 import org.metatrans.apps.maze.app.Application_Maze;
 import org.metatrans.apps.maze.menu.Activity_Menu_Main;
 import org.metatrans.apps.maze.model.World_Labyrints;
-import org.metatrans.commons.app.Application_Base_Ads;
 import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
 import org.metatrans.commons.cfg.colours.IConfigurationColours;
 import org.metatrans.commons.graphics2d.main.Activity_Main_Base2D;

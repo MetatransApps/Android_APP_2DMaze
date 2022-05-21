@@ -64,29 +64,20 @@ public class World_Labyrints extends World {
 
 		System.out.println("!EXPENSIVE OP: RE-INIT BITMAPS OF THE WORLD");
 
-		bitmap_acorn 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_acorn);
+		bitmap_acorn 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_acorn_transparent);
 
 		bitmap_player_l   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_l);
 		bitmap_player_r   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_r);
 
-		bitmap_challenger_l = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
-		bitmap_challenger_r = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
-
+		bitmap_challenger_l = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger_l);
+		bitmap_challenger_r = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger_r);
 	}
 
 
 	protected void initBitmaps() {
-		
+
+
 		System.out.println("!EXPENSIVE OP: RE-INIT BITMAPS OF THE WORLD");
-
-		bitmap_acorn 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_acorn);
-
-		bitmap_player_l   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_l);
-		bitmap_player_r   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_r);
-
-		bitmap_challenger_l = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
-		bitmap_challenger_r = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger);
-
 
 		bitmap_wall_1 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_wall_v2);
 		bitmap_wall_2 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_wall_5);
