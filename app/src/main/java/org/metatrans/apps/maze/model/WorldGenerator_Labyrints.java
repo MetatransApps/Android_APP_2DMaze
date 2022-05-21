@@ -10,11 +10,11 @@ import org.metatrans.apps.maze.model.entities.Entity2D_Challenger_Labyrinth;
 import org.metatrans.apps.maze.model.entities.Entity2D_Collectible_Acorn_Labyrinths;
 import org.metatrans.apps.maze.model.entities.Entity2D_Collectible_Key_Labyrinths;
 import org.metatrans.apps.maze.model.entities.Entity2D_Collectible_Star_Labyrinths;
-import org.metatrans.apps.maze.model.entities.Entity2D_Ground_Empty_Labyrinths;
-import org.metatrans.apps.maze.model.entities.Entity2D_Ground_Wall_Border_Labyrinths;
-import org.metatrans.apps.maze.model.entities.Entity2D_Ground_Wall_Labyrinths;
+import org.metatrans.apps.maze.model.entities.Entity2D_Terrain_Empty_Labyrinths;
 import org.metatrans.apps.maze.model.entities.Entity2D_Player_Labyrints;
 import org.metatrans.apps.maze.model.entities.Entity2D_Special_Gate_Labyrints;
+import org.metatrans.apps.maze.model.entities.Entity2D_Terrain_Labyrinths;
+import org.metatrans.apps.maze.model.entities.Entity2D_Terrain_Wall_Labyrinths;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.graphics2d.model.World;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Base;
@@ -97,37 +97,11 @@ public class WorldGenerator_Labyrints {
 				//Ground
 				if (maze[r][c] == 0) {
 
-					world.addEntity(new Entity2D_Ground_Empty_Labyrinths(world, envelop, c, r));
+					world.addEntity(new Entity2D_Terrain_Empty_Labyrinths(world, envelop, c, r));
 
 				} else { //Walls
 
-					boolean is_border = 	r == 0
-							|| r == maze.length - 1
-							|| c == 0
-							|| c == maze[r].length - 1;
-
-					if (flowers_inside) {
-
-						if (is_border) {
-
-							world.addEntity(new Entity2D_Ground_Wall_Border_Labyrinths(world, envelop, c, r));
-
-						} else {
-
-							world.addEntity(new Entity2D_Ground_Wall_Labyrinths(world, envelop, c, r));
-						}
-
-					} else {
-
-						if (is_border) {
-
-							world.addEntity(new Entity2D_Ground_Wall_Labyrinths(world, envelop, c, r));
-
-						} else {
-
-							world.addEntity(new Entity2D_Ground_Wall_Border_Labyrinths(world, envelop, c, r));
-						}
-					}
+					world.addEntity(new Entity2D_Terrain_Wall_Labyrinths(world, envelop, c, r));
 				}
 			}
 		}

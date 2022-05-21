@@ -100,11 +100,11 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 
 						if (dx > 0) {
 
-							visit_direction = Entity2D_Ground_Empty_Labyrinths.DIRECTION_RIGHT;
+							visit_direction = Entity2D_Terrain_Empty_Labyrinths.DIRECTION_RIGHT;
 
 						} else /*if (dx < 0)*/ {
 
-							visit_direction = Entity2D_Ground_Empty_Labyrinths.DIRECTION_UP;
+							visit_direction = Entity2D_Terrain_Empty_Labyrinths.DIRECTION_UP;
 
 						} /*else {
 
@@ -115,11 +115,11 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 
 						if (dy > 0) {
 
-							visit_direction = Entity2D_Ground_Empty_Labyrinths.DIRECTION_DOWN;
+							visit_direction = Entity2D_Terrain_Empty_Labyrinths.DIRECTION_DOWN;
 
 						} else /*if (dy < 0)*/ {
 
-							visit_direction = Entity2D_Ground_Empty_Labyrinths.DIRECTION_LEFT;
+							visit_direction = Entity2D_Terrain_Empty_Labyrinths.DIRECTION_LEFT;
 
 						} /*else {
 
@@ -132,7 +132,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 
 					if (visit_direction != -1) {
 
-						((Entity2D_Ground_Empty_Labyrinths) current_ground).setDirection(visit_direction);
+						((Entity2D_Terrain_Empty_Labyrinths) current_ground).setDirection(visit_direction);
 					}
 
 					current_ground = cur;

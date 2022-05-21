@@ -7,12 +7,11 @@ import android.graphics.RectF;
 import org.metatrans.apps.maze.app.Application_Maze;
 import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.cfg.IConfigurationEntry;
 import org.metatrans.commons.graphics2d.model.World;
-import org.metatrans.commons.graphics2d.model.entities.Entity2D_Ground;
-import org.metatrans.commons.graphics2d.model.entities.IEntity2D;
 
 
-public class Entity2D_Ground_Empty_Labyrinths extends Entity2D_Terrain_Labyrinths {
+public class Entity2D_Terrain_Empty_Labyrinths extends Entity2D_Terrain_Labyrinths {
 	
 	
 	private static final long serialVersionUID = -434579107405800961L;
@@ -27,14 +26,14 @@ public class Entity2D_Ground_Empty_Labyrinths extends Entity2D_Terrain_Labyrinth
 	private int direction;
 
 
-	public Entity2D_Ground_Empty_Labyrinths(World world, RectF _evelop, int _index_x, int _index_y) {
+	public Entity2D_Terrain_Empty_Labyrinths(World world, RectF _evelop, int _index_x, int _index_y) {
 
 		super(world, _evelop, SUBTYPE_GROUND_EMPTY, _index_x,_index_y);
 
 		direction = DIRECTION_NONE;
 	}
-	
-	
+
+
 	public int getBackgroundColour() {
 		return Application_Base.getInstance().getColoursCfg().getColour_Background();
 	}
@@ -42,6 +41,12 @@ public class Entity2D_Ground_Empty_Labyrinths extends Entity2D_Terrain_Labyrinth
 	
 	public int getBitmapTransparency() {
 		return 128;
+	}
+
+
+	public void setDirection(int direction) {
+
+		this.direction = direction;
 	}
 
 
@@ -67,11 +72,5 @@ public class Entity2D_Ground_Empty_Labyrinths extends Entity2D_Terrain_Labyrinth
 			default:
 				throw new IllegalStateException("direction=" + direction);
 		}
-	}
-
-
-	public void setDirection(int direction) {
-
-		this.direction = direction;
 	}
 }
