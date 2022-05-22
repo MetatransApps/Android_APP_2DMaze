@@ -80,7 +80,7 @@ public class World_Labyrints extends World {
 		System.out.println("!EXPENSIVE OP: RE-INIT BITMAPS OF THE WORLD");
 
 		bitmap_wall_1 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_wall_v2);
-		bitmap_wall_2 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_wall_5);
+		bitmap_wall_2 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_wall_5_2);
 
 		bitmap_grass		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_grass_5);
 		bitmap_step_down 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps_5_down);

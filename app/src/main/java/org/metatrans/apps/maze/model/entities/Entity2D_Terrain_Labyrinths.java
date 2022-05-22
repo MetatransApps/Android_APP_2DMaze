@@ -24,12 +24,9 @@ public abstract class Entity2D_Terrain_Labyrinths extends Entity2D_Ground {
 
 	protected Bitmap getBitmap1() {
 
-		boolean flag1 = getFlag1();
-
-		boolean is_border = world.isOuterBorder(getCellIndex_X(), getCellIndex_Y());
-
-		return flag1 ? (Application_Maze.getInstance().getWorld()).getBitmap_wall(!is_border)
-				: (Application_Maze.getInstance().getWorld()).getBitmap_wall(is_border);
+		return (Application_Maze.getInstance().getWorld()).getBitmap_wall(
+					getFlag1() ^ world.isOuterBorder(getCellIndex_X(), getCellIndex_Y())
+				);
 	}
 
 

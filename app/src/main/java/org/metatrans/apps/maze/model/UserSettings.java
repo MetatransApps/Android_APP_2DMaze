@@ -13,8 +13,8 @@ public class UserSettings extends org.metatrans.commons.graphics2d.model.UserSet
 	
 	
 	private static final long serialVersionUID = -612059325371084619L;
-	
-	
+
+
 	public UserSettings() {
 		
 		super();
@@ -47,7 +47,7 @@ public class UserSettings extends org.metatrans.commons.graphics2d.model.UserSet
 	private void fixFields(String op) {
 		
 		if (uiColoursID == 0) {
-	    	uiColoursID 		= IConfigurationColours.CFG_COLOUR_BLUE_PETROL;
+	    	uiColoursID 		= IConfigurationColours.CFG_COLOUR_GRAY;
 	    	System.out.println("UserSettings: " + op + " - updating colour id");
 	    }
 	    

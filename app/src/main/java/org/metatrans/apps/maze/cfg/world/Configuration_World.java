@@ -22,7 +22,7 @@ public class Configuration_World extends Configuration_World_Base {
 		int[] cells_count = WorldGenerator_Labyrints.getCellsCount(spaceMultiplier);
 		
 		name += " (" + cells_count[0] + "x" + cells_count[1] + " " + Application_Base.getInstance().getString(R.string.steps)
-				+ ", " + challengers + " " + Application_Base.getInstance().getString(R.string.enemies) + " )";
+				+ ", " + (1 + challengers) + " " + Application_Base.getInstance().getString(R.string.enemies) + " )";
 		
 		return name;
 	}

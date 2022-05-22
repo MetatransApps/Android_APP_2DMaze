@@ -10,6 +10,7 @@ import org.metatrans.commons.ads.api.IAdsConfiguration;
 import org.metatrans.commons.app.Application_Base_Ads;
 import org.metatrans.commons.cfg.colours.ConfigurationUtils_Colours;
 import org.metatrans.commons.cfg.colours.IConfigurationColours;
+import org.metatrans.commons.graphics2d.model.GameData;
 import org.metatrans.commons.loading.View_Loading_Base;
 
 
@@ -20,7 +21,7 @@ public class Activity_Loading extends org.metatrans.commons.loading.Activity_Loa
 	protected void load() {
 		
 		try {
-			Application_Maze.getInstance().getGameData();
+			GameData data = Application_Maze.getInstance().getGameData();
 		} catch(Exception e) {
 			e.printStackTrace();
 			Application_Maze.getInstance().recreateGameDataObject();

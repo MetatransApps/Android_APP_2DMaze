@@ -20,7 +20,9 @@ import org.metatrans.commons.events.api.IEventsManager;
 import org.metatrans.commons.graphics2d.app.Application_2D_Base;
 import org.metatrans.commons.graphics2d.model.GameData;
 import org.metatrans.commons.graphics2d.model.IWorld;
+import org.metatrans.commons.model.GameData_Base;
 import org.metatrans.commons.model.UserSettings_Base;
+import org.metatrans.commons.storage.StorageUtils;
 import org.metatrans.commons.ui.utils.DebugUtils;
 
 
@@ -43,6 +45,22 @@ public abstract class Application_Maze extends Application_2D_Base {
 		ConfigurationUtils_Colours.class.getName();
 		
 		ConfigurationUtils_Base_MenuMain.createInstance();
+
+
+		//Handle incompatible changes in the model classes
+		try {
+
+			GameData game_data = (GameData) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
+
+			if (game_data != null && game_data.model_version == GameData.MODEL_VERSION_1) {
+
+				StorageUtils.clearStore(this, GameData_Base.FILE_NAME_GAME_DATA);
+			}
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
 	}
 
 

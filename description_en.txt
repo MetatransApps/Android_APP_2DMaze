@@ -1,0 +1,19 @@
+The Squirrel's Maze 2D
+
+Help the Squirrel. Different maze each time. Many levels.
+
+Could you help the squirrel?
+Inspired by love to maze, labyrinth, we created а game for resolving easy to very hard maze, labyrinth, which is each time different. There are company in some levels, which makes the game more difficult. You can collect acorns and feed the other animals. The goal is to help the squirrel by finding the key and the exit. Meanwhile, if you collect 3 starts you go to the next level.
+Give it a try!
+
+The game is supporting different playing levels as well as more other features, like:
+1. High scores - keeps track of your best result.
+2. Supports different color palettes for different tastes.
+3. Supports tablets and phones.
+4. Increasing difficulties and sizes of maze, labyrinths.
+5. Each time different maze, labyrinths.
+
+Your feedback and/or review is more than welcome.
+
+https://metatransapps.com/maze-runner-2d-old-school-labyrinth-offline-game/
+
