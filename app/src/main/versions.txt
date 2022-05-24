@@ -1,3 +1,9 @@
+1.1.1 [PAID] (24.05.2022) 
+Compliance with Google Play ads policy - Interstitial ads are disabled on re-play button click.
+
+1.1.9 (24.05.2022) 
+Compliance with Google Play ads policy - Interstitial ads are disabled on re-play button click.
+
 1.1.0 [PAID] (22.05.2022) 
 Significant improvement of the images used in the game
 

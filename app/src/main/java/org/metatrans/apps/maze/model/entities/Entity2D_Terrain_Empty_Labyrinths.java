@@ -4,11 +4,11 @@ package org.metatrans.apps.maze.model.entities;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
 
-import org.metatrans.apps.maze.app.Application_Maze;
 import org.metatrans.apps.maze.model.World_Labyrints;
-import org.metatrans.commons.app.Application_Base;
-import org.metatrans.commons.cfg.IConfigurationEntry;
 import org.metatrans.commons.graphics2d.model.World;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Entity2D_Terrain_Empty_Labyrinths extends Entity2D_Terrain_Labyrinths {
@@ -25,6 +25,8 @@ public class Entity2D_Terrain_Empty_Labyrinths extends Entity2D_Terrain_Labyrint
 
 	private int direction;
 
+	private transient Map<Integer, Bitmap> bitmap_cache;
+
 
 	public Entity2D_Terrain_Empty_Labyrinths(World world, RectF _evelop, int _index_x, int _index_y) {
 
@@ -34,43 +36,55 @@ public class Entity2D_Terrain_Empty_Labyrinths extends Entity2D_Terrain_Labyrint
 	}
 
 
-	public int getBackgroundColour() {
-		return Application_Base.getInstance().getColoursCfg().getColour_Background();
-	}
-	
-	
-	public int getBitmapTransparency() {
-		return 128;
-	}
-
-
 	public void setDirection(int direction) {
 
 		this.direction = direction;
 	}
 
 
+	@Override
 	public Bitmap getBitmap() {
 
-		switch (direction) {
+		//if (true) return null;
 
-			case DIRECTION_NONE:
-				return ((World_Labyrints) Application_Maze.getInstance().getWorld()).getBitmap_grass();
+		if (bitmap_cache == null) {
 
-			case DIRECTION_DOWN:
-				return ((World_Labyrints) Application_Maze.getInstance().getWorld()).getBitmap_step_down();
-
-			case DIRECTION_UP:
-				return ((World_Labyrints) Application_Maze.getInstance().getWorld()).getBitmap_step_up();
-
-			case DIRECTION_LEFT:
-				return ((World_Labyrints) Application_Maze.getInstance().getWorld()).getBitmap_step_left();
-
-			case DIRECTION_RIGHT:
-				return ((World_Labyrints) Application_Maze.getInstance().getWorld()).getBitmap_step_right();
-
-			default:
-				throw new IllegalStateException("direction=" + direction);
+			bitmap_cache = new HashMap<Integer, Bitmap>();
 		}
+
+		Bitmap cached = bitmap_cache.get(direction);
+
+		if (cached == null) {
+
+			switch (direction) {
+
+				case DIRECTION_NONE:
+					cached = scaleBitmapToRectangleForDrawing(((World_Labyrints) world).getBitmap_grass());
+					break;
+
+				case DIRECTION_DOWN:
+					cached =scaleBitmapToRectangleForDrawing( ((World_Labyrints) world).getBitmap_step_down());
+					break;
+
+				case DIRECTION_UP:
+					cached = scaleBitmapToRectangleForDrawing(((World_Labyrints) world).getBitmap_step_up());
+					break;
+
+				case DIRECTION_LEFT:
+					cached = scaleBitmapToRectangleForDrawing(((World_Labyrints) world).getBitmap_step_left());
+					break;
+
+				case DIRECTION_RIGHT:
+					cached = scaleBitmapToRectangleForDrawing(((World_Labyrints) world).getBitmap_step_right());
+					break;
+
+				default:
+					throw new IllegalStateException("direction=" + direction);
+			}
+
+			bitmap_cache.put(direction, cached);
+		}
+
+		return cached;
 	}
 }

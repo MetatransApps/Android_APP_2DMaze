@@ -64,13 +64,13 @@ public class World_Labyrints extends World {
 
 		System.out.println("!EXPENSIVE OP: RE-INIT BITMAPS OF THE WORLD");
 
-		bitmap_acorn 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_acorn_transparent);
+		bitmap_acorn 		= createScaledBitmap(R.drawable.ic_acorn);
 
-		bitmap_player_l   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_l);
-		bitmap_player_r   	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_player7_r);
+		bitmap_player_l   	= createScaledBitmap(R.drawable.ic_player7_l);
+		bitmap_player_r   	= createScaledBitmap(R.drawable.ic_player7_r);
 
-		bitmap_challenger_l = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger_l);
-		bitmap_challenger_r = BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_challenger_r);
+		bitmap_challenger_l = createScaledBitmap(R.drawable.ic_challenger_l);
+		bitmap_challenger_r = createScaledBitmap(R.drawable.ic_challenger_r);
 	}
 
 
@@ -79,26 +79,32 @@ public class World_Labyrints extends World {
 
 		System.out.println("!EXPENSIVE OP: RE-INIT BITMAPS OF THE WORLD");
 
-		bitmap_wall_1 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_wall_v2);
-		bitmap_wall_2 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_wall_5_2);
+		bitmap_wall_1 		= createScaledBitmap(R.drawable.ic_lanot_wall_v2);
+		bitmap_wall_2 		= createScaledBitmap(R.drawable.ic_lanot_wall_5_2);
 
-		bitmap_grass		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_grass_5);
-		bitmap_step_down 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps_5_down);
-		bitmap_step_up 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps_5_up);
-		bitmap_step_left 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps_5_left);
-		bitmap_step_right 	= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_steps_5_right);
+		bitmap_grass		= createScaledBitmap(R.drawable.ic_lanot_grass_5);
+		bitmap_step_down 	= createScaledBitmap(R.drawable.ic_lanot_steps_5_down);
+		bitmap_step_up 		= createScaledBitmap(R.drawable.ic_lanot_steps_5_up);
+		bitmap_step_left 	= createScaledBitmap(R.drawable.ic_lanot_steps_5_left);
+		bitmap_step_right 	= createScaledBitmap(R.drawable.ic_lanot_steps_5_right);
 
-		bitmap_star 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_star_gold);
-		bitmap_key			= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_key);
-		bitmap_gate 		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_gate);
-		bitmap_level		= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_level);
-		bitmap_paw			= BitmapUtils.fromResource(Application_Base.getInstance(), R.drawable.ic_lanot_step);
+		bitmap_star 		= createScaledBitmap(R.drawable.ic_star_gold);
+		bitmap_key			= createScaledBitmap(R.drawable.ic_key);
+		bitmap_gate 		= createScaledBitmap(R.drawable.ic_gate);
+		bitmap_level		= createScaledBitmap(R.drawable.ic_level);
+		bitmap_paw			= createScaledBitmap(R.drawable.ic_lanot_step);
 
 
 		initCustomBitmaps();
 	}
-	
-	
+
+
+	protected Bitmap createScaledBitmap(int resID) {
+
+		return BitmapUtils.createScaledBitmap(BitmapUtils.fromResource(Application_Base.getInstance(), resID), (int) getCellSize(), (int) getCellSize(), false);
+	}
+
+
 	@Override
 	public synchronized void addEntity(IEntity2D entity) {
 		
@@ -196,9 +202,9 @@ public class World_Labyrints extends World {
 	}
 
 
-	public Bitmap getBitmap_wall(boolean border) {
+	public Bitmap getBitmap_wall(boolean wall_index) {
 
-		if (border) {
+		if (wall_index) {
 
 			if (bitmap_wall_1 == null || bitmap_wall_1.isRecycled()) {
 
