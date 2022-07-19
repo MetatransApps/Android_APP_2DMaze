@@ -101,7 +101,7 @@ public class World_Labyrints extends World {
 
 	protected Bitmap createScaledBitmap(int resID) {
 
-		return BitmapUtils.createScaledBitmap(BitmapUtils.fromResource(Application_Base.getInstance(), resID), (int) getCellSize(), (int) getCellSize(), false);
+		return BitmapUtils.createScaledBitmap(BitmapUtils.fromResource(Application_Base.getInstance(), resID), (int) getCellSize(), (int) getCellSize());
 	}
 
 
