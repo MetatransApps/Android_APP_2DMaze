@@ -18,6 +18,7 @@ import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.graphics2d.model.World;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Base;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Challenger;
+import org.metatrans.commons.graphics2d.model.entities.Entity2D_Moving;
 import org.metatrans.commons.ui.utils.ScreenUtils;
 
 import android.content.Context;
@@ -61,15 +62,11 @@ public class WorldGenerator_Labyrints {
 		int main_width = (int) (cfg_world.getSpaceMultiplier() * Math.max(screen_size[0], screen_size[1]));
 		int main_height = (int) (cfg_world.getSpaceMultiplier() * Math.min(screen_size[0], screen_size[1]));
 
-		//ThreadGroup group = new ThreadGroup("MazeThreadGroup");
-		//new Thread(group, runnableObject, "YourThreadName", 2000000).start();
-
 		int[] cells_count = getCellsCount(cfg_world.getSpaceMultiplier());
 		int count_cells_x = cells_count[0];
 		int count_cells_y = cells_count[1];
 
 
-		//RecursiveBacktrackerMazeGenerator m1 = new RecursiveBacktrackerMazeGenerator(main_width / MATRIX_DELIMITER, main_height / MATRIX_DELIMITER);
 		Maze m = new Maze(count_cells_y, count_cells_x);
 		m.generateMaze();
 		//m1.generate();
@@ -83,9 +80,8 @@ public class WorldGenerator_Labyrints {
 		World_Labyrints world = new World_Labyrints(activity, maze[0].length, maze.length);
 
 		world.setCellSize(cell_size);
-		//world.setCellsCount(count_cells_x, count_cells_y);
 
-		//List<Entity2D_Ground> groundEntities = new ArrayList<Entity2D_Ground>();
+
 		for (int r = 0; r < maze.length; r++) {
 			for (int c = 0; c < maze[r].length; c++) {
 
@@ -94,13 +90,15 @@ public class WorldGenerator_Labyrints {
 
 				RectF envelop = new RectF(x, y, (x + size_x), (y + size_y));
 
-				//Ground
+
 				if (maze[r][c] == 0) {
 
+					//Ground
 					world.addEntity(new Entity2D_Terrain_Empty_Labyrinths(world, envelop, c, r));
 
-				} else { //Walls
+				} else {
 
+					//Walls
 					world.addEntity(new Entity2D_Terrain_Wall_Labyrinths(world, envelop, c, r));
 				}
 			}
@@ -176,6 +174,12 @@ public class WorldGenerator_Labyrints {
 			world.addEntity(challengerEntity);
 			challengersCount--;
 			if (challengersCount <= 0) break;
+		}
+
+
+		for (Entity2D_Moving moving: world.getMovingEntities()) {
+
+			moving.setWorldSize(world.get_WORLD_SIZE_X(), world.get_WORLD_SIZE_Y());
 		}
 
 

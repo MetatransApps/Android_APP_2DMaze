@@ -12,6 +12,7 @@ import org.metatrans.commons.graphics2d.model.entities.Entity2D_Bullet;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Challenger;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Moving;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Special;
+import org.metatrans.commons.graphics2d.model.entities.I2DBitmapCache;
 import org.metatrans.commons.graphics2d.model.entities.IEntity2D;
 import org.metatrans.commons.ui.utils.BitmapUtils;
 
@@ -57,6 +58,13 @@ public class World_Labyrints extends World {
 
 		killersEntities_forPlayer = new ArrayList<IEntity2D>();
 		killersEntities_forChallengers = new ArrayList<IEntity2D>();
+	}
+
+
+	@Override
+	protected I2DBitmapCache createBitmapCache() {
+
+		return BitmapCache_Maze.getStaticInstance(BitmapCache_Maze.BITMAP_ID_COMMON);
 	}
 
 

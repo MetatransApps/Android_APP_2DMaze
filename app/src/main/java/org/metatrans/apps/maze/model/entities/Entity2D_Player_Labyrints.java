@@ -1,6 +1,7 @@
 package org.metatrans.apps.maze.model.entities;
 
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -37,11 +38,18 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 
 	public Entity2D_Player_Labyrints(World_Labyrints _world, RectF _evelop, List<? extends IEntity2D> _killerEntities) {
 		
-		super(_world, _evelop, _world.getGroundEntities_SolidOnly(), _killerEntities);
+		super(_world, _evelop, _world.getGroundEntities_SolidOnly(), _killerEntities, 1, 0);
 		
 		gateEntity = getWorld().getExitEntity();
 		
 		visited = new HashSet<Entity2D_Ground>();
+	}
+
+
+	@Override
+	protected boolean hasCustomEnvelopForDraw() {
+
+		return true;
 	}
 
 
@@ -182,8 +190,15 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 				
 				//RectF bulletEnvelop = new RectF(getEvelop().left + 5, getEvelop().top + 5, getEvelop().right - 5, getEvelop().bottom - 5);
 				RectF bulletEnvelop = new RectF(getEnvelop().left + border, getEnvelop().top + border, getEnvelop().right - border, getEnvelop().bottom - border);
-				Entity2D_Moving bulletEntity = new Entity2D_Bullet_Labyrints(getWorld(), bulletEnvelop, getBlockerEntities());
-				
+				Entity2D_Moving bulletEntity = new Entity2D_Bullet_Labyrints(
+						getWorld(),
+						bulletEnvelop,
+						getWorld().getGroundEntities_SolidOnly(),
+						new ArrayList<>()
+				);
+
+				bulletEntity.setWorldSize(getWorld().get_WORLD_SIZE_X(), getWorld().get_WORLD_SIZE_Y());
+
 				int max_speed = getWorld().getMaxSpeed_BULLET();
 				
 				if (dx > 0) {
@@ -203,10 +218,16 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 				
 				getGameData().count_bullets--;
 				
-				//RectF bulletEnvelop = new RectF(getEvelop().left + 5, getEvelop().top + 5, getEvelop().right - 5, getEvelop().bottom - 5);
 				RectF bulletEnvelop = new RectF(getEnvelop().left + border, getEnvelop().top + border, getEnvelop().right - border, getEnvelop().bottom - border);
-				Entity2D_Moving bulletEntity = new Entity2D_Bullet_Labyrints(getWorld(), bulletEnvelop, getBlockerEntities());
-				
+				Entity2D_Moving bulletEntity = new Entity2D_Bullet_Labyrints(
+						getWorld(),
+						bulletEnvelop,
+						getWorld().getGroundEntities_SolidOnly(),
+						new ArrayList<>()
+				);
+
+				bulletEntity.setWorldSize(getWorld().get_WORLD_SIZE_X(), getWorld().get_WORLD_SIZE_Y());
+
 				int max_speed = getWorld().getMaxSpeed_BULLET();
 				
 				if (dy > 0) {

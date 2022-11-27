@@ -63,7 +63,7 @@ public class Entity2D_Terrain_Empty_Labyrinths extends Entity2D_Terrain_Labyrint
 					break;
 
 				case DIRECTION_DOWN:
-					cached =scaleBitmapToRectangleForDrawing( ((World_Labyrints) world).getBitmap_step_down());
+					cached = scaleBitmapToRectangleForDrawing( ((World_Labyrints) world).getBitmap_step_down());
 					break;
 
 				case DIRECTION_UP:

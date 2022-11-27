@@ -22,7 +22,7 @@ public class Entity2D_Challenger_Labyrinth extends Entity2D_Challenger {
 	public Entity2D_Challenger_Labyrinth(World _world, RectF _evelop,
 			List<Entity2D_Ground> _blockerEntities, List<? extends IEntity2D> _killerEntities) {
 
-		super(_world, _evelop, _blockerEntities, _killerEntities);
+		super(_world, _evelop, _blockerEntities, _killerEntities, 1, 0);
 		
 		setSpeed((Math.random() < 0.5 ? 1f : -1f) *_world.getMaxSpeed_CHALLENGER(), (Math.random() < 0.5 ? 1f : -1f) * _world.getMaxSpeed_CHALLENGER());
 	}
@@ -31,5 +31,12 @@ public class Entity2D_Challenger_Labyrinth extends Entity2D_Challenger {
 	@Override
 	public Bitmap getBitmap() {
 		return (getDx() >= 0) ? ((World_Labyrints) getWorld()).getBitmap_challenger_r() : ((World_Labyrints) getWorld()).getBitmap_challenger_l();
+	}
+
+
+	@Override
+	protected boolean hasCustomEnvelopForDraw() {
+
+		return true;
 	}
 }
