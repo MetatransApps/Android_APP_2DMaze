@@ -1,11 +1,13 @@
 package org.metatrans.apps.maze.model.entities;
 
 
+import android.graphics.Bitmap;
 import android.graphics.RectF;
 
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.graphics2d.model.IWorld;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Ground;
+import org.metatrans.commons.ui.utils.BitmapUtils;
 
 
 public abstract class Entity2D_Terrain_Labyrinths extends Entity2D_Ground {
@@ -26,18 +28,18 @@ public abstract class Entity2D_Terrain_Labyrinths extends Entity2D_Ground {
 	}
 
 
-	@Override
-	public int getBackgroundColour() {
+	protected Bitmap scaleBitmapToRectangleForDrawing(Bitmap org) {
 
-		return Application_Base.getInstance().getColoursCfg().getColour_Square_White();
+		return BitmapUtils.createScaledBitmap(org,
+				(int) getEnvelop_ForDraw().width(),
+				(int) getEnvelop_ForDraw().height()
+		);
 	}
 
 
 	@Override
-	public int getBitmapTransparency() {
+	public int getBackgroundColour() {
 
-		//return 255;
-		return (int) 199.111110912;
-		//return (int) 215.333;
+		return Application_Base.getInstance().getColoursCfg().getColour_Square_White();
 	}
 }

@@ -4,6 +4,7 @@ package org.metatrans.apps.maze.model.entities;
 import java.util.List;
 
 import org.metatrans.apps.maze.lib.R;
+import org.metatrans.apps.maze.model.BitmapCache_Maze;
 import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.graphics2d.model.World;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Bullet;
@@ -18,7 +19,11 @@ public class Entity2D_Bullet_Labyrints extends Entity2D_Bullet {
 	
 	
 	private static final long serialVersionUID = -2015301064405980601L;
-	
+
+
+	private BitmapTransformationConfig transform_config;
+
+
 	public Entity2D_Bullet_Labyrints(
 				World _world,
 				RectF _envelop,
@@ -30,18 +35,23 @@ public class Entity2D_Bullet_Labyrints extends Entity2D_Bullet {
 
 
 	@Override
-	protected boolean hasCustomEnvelopForDraw() {
-
-		return true;
+	public Bitmap getBitmap() {
+		return ((World_Labyrints) getWorld()).getBitmap_acorn();
 	}
 
 
 	@Override
-	public Bitmap getBitmap() {
-		return ((World_Labyrints) getWorld()).getBitmap_acorn();
+	public BitmapTransformationConfig getTransform_config() {
+
+		if (transform_config == null) {
+
+			transform_config = new BitmapTransformationConfig(0.605f, 1.30f);
+		}
+
+		return transform_config;
 	}
-	
-	
+
+
 	@Override
 	public void nextMoment(float takts) {
 		

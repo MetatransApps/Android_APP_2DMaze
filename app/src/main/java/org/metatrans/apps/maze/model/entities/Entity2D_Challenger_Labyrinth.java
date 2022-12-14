@@ -3,6 +3,7 @@ package org.metatrans.apps.maze.model.entities;
 
 import java.util.List;
 
+import org.metatrans.apps.maze.model.BitmapCache_Maze;
 import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.graphics2d.model.World;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Challenger;
@@ -18,7 +19,10 @@ public class Entity2D_Challenger_Labyrinth extends Entity2D_Challenger {
 	
 	private static final long serialVersionUID = 5416967203188382917L;
 
-	
+
+	private BitmapTransformationConfig transform_config;
+
+
 	public Entity2D_Challenger_Labyrinth(World _world, RectF _evelop,
 			List<Entity2D_Ground> _blockerEntities, List<? extends IEntity2D> _killerEntities) {
 
@@ -30,13 +34,19 @@ public class Entity2D_Challenger_Labyrinth extends Entity2D_Challenger {
 
 	@Override
 	public Bitmap getBitmap() {
+
 		return (getDx() >= 0) ? ((World_Labyrints) getWorld()).getBitmap_challenger_r() : ((World_Labyrints) getWorld()).getBitmap_challenger_l();
 	}
 
 
 	@Override
-	protected boolean hasCustomEnvelopForDraw() {
+	public BitmapTransformationConfig getTransform_config() {
 
-		return true;
+		if (transform_config == null) {
+
+			transform_config = new BitmapTransformationConfig(0.605f, 1.30f);
+		}
+
+		return transform_config;
 	}
 }

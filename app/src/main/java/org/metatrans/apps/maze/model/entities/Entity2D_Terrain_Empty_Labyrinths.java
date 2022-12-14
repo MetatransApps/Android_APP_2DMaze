@@ -6,6 +6,7 @@ import android.graphics.RectF;
 
 import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.graphics2d.model.World;
+import org.metatrans.commons.ui.utils.BitmapUtils;
 
 import java.util.HashMap;
 import java.util.Map;

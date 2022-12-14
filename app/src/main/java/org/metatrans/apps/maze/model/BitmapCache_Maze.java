@@ -1,7 +1,7 @@
 package org.metatrans.apps.maze.model;
 
 
-import org.metatrans.commons.graphics2d.model.BitmapCache_Base;
+import org.metatrans.commons.model.BitmapCache_Base;
 
 
 public class BitmapCache_Maze extends BitmapCache_Base {

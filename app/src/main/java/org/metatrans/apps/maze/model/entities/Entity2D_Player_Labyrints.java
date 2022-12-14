@@ -24,16 +24,18 @@ import android.graphics.RectF;
 
 
 public class Entity2D_Player_Labyrints extends Entity2D_Player {
-	
+
 	
 	private static final long serialVersionUID = 3604452932833478013L;
-	
-	
+
+
 	private Entity2D_Special gateEntity;
 
 	private Set<Entity2D_Ground> visited;
 	
 	private Entity2D_Ground current_ground;
+
+	private BitmapTransformationConfig transform_config;
 
 
 	public Entity2D_Player_Labyrints(World_Labyrints _world, RectF _evelop, List<? extends IEntity2D> _killerEntities) {
@@ -47,13 +49,6 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 
 
 	@Override
-	protected boolean hasCustomEnvelopForDraw() {
-
-		return true;
-	}
-
-
-	@Override
 	protected World_Labyrints getWorld() {
 		return (World_Labyrints) super.getWorld();
 	}
@@ -62,13 +57,25 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 	protected Class<? extends Activity> getActivityResult_Class() {
 		return Activity_Result.class;
 	}
-	
-	
+
+
 	@Override
 	public Bitmap getBitmap() {
 		return (getDx() >= 0) ? ((World_Labyrints) getWorld()).getBitmap_player_r() : ((World_Labyrints) getWorld()).getBitmap_player_l();
 	}
-	
+
+
+	@Override
+	public BitmapTransformationConfig getTransform_config() {
+
+		if (transform_config == null) {
+
+			transform_config = new BitmapTransformationConfig(0.605f, 1.30f);
+		}
+
+		return transform_config;
+	}
+
 	
 	@Override
 	public void nextMoment(float takts) {
