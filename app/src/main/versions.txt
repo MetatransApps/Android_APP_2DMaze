@@ -1,3 +1,9 @@
+1.1.2 [PAID] (18.12.2022)
+Optimizations regarding frames per second (FPS) rate and decreasing even more the app crash rate (bugfixing)
+
+1.2.2 (18.12.2022)
+Optimizations regarding frames per second (FPS) rate and decreasing even more the app crash rate (bugfixing)
+
 1.1.1 [PAID] (24.05.2022) 
 Compliance with Google Play ads policy - Interstitial ads are disabled on re-play button click.
 
