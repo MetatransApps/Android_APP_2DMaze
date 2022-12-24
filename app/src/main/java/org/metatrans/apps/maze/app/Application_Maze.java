@@ -47,7 +47,7 @@ public abstract class Application_Maze extends Application_2D_Base {
 		ConfigurationUtils_Base_MenuMain.createInstance();
 
 		//Handle incompatible changes in the model classes
-		try {
+		/*try {
 
 			GameData game_data = (GameData) StorageUtils.readStorage(this, GameData_Base.FILE_NAME_GAME_DATA);
 
@@ -59,7 +59,7 @@ public abstract class Application_Maze extends Application_2D_Base {
 		} catch (Exception e) {
 
 			e.printStackTrace();
-		}
+		}*/
 	}
 
 
