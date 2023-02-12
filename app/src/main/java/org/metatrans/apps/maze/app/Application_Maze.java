@@ -103,7 +103,8 @@ public abstract class Application_Maze extends Application_2D_Base {
 	
 	@Override
 	protected IEventsManager createEventsManager() {
-		return new EventsManager_MOS(getExecutor(), getAnalytics(), getAchievementsManager());
+
+		return new EventsManager_MOS(getExecutor(), getAchievementsManager());
 	}
 	
 	

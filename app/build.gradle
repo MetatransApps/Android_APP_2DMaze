@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     defaultConfig {
 
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 103
         versionName "1.0.3"
 
@@ -34,5 +34,4 @@ dependencies {
     implementation project(":Android_LIB_Commons")
     implementation project(":Android_LIB_CommonsAds")
     implementation project(":Android_LIB_Commons2D")
-
 }
