@@ -1,6 +1,8 @@
 package org.metatrans.apps.maze.app;
 
 
+//import com.yoyo.api.SoundHandlerSingleton;
+
 import org.metatrans.apps.maze.achievements.AchievementsManager_MOS;
 import org.metatrans.apps.maze.cfg.world.ConfigurationUtils_Level;
 import org.metatrans.apps.maze.events.EventsManager_MOS;
@@ -43,6 +45,15 @@ public abstract class Application_Maze extends Application_2D_Base {
 		ConfigurationUtils_Colours.class.getName();
 		
 		ConfigurationUtils_Base_MenuMain.createInstance();
+
+		/*try {
+
+			SoundHandlerSingleton.getInstance(this);
+
+		} catch (Exception e) {
+
+			throw new RuntimeException(e);
+		}*/
 
 		//Handle incompatible changes in the model classes
 		/*try {
