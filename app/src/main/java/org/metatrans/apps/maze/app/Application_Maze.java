@@ -46,15 +46,6 @@ public abstract class Application_Maze extends Application_2D_Base {
 		
 		ConfigurationUtils_Base_MenuMain.createInstance();
 
-		/*try {
-
-			SoundHandlerSingleton.getInstance(this);
-
-		} catch (Exception e) {
-
-			throw new RuntimeException(e);
-		}*/
-
 		//Handle incompatible changes in the model classes
 		/*try {
 
