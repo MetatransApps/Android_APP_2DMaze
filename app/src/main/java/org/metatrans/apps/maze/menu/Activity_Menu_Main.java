@@ -8,6 +8,7 @@ import org.metatrans.apps.maze.cfg.world.ConfigurationUtils_Level;
 import org.metatrans.apps.maze.lib.R;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.menu.Config_MenuMain_Base;
+import org.metatrans.commons.cfg.menu.Config_MenuMain_Melody;
 import org.metatrans.commons.cfg.menu.IConfigurationMenu_Main;
 import org.metatrans.commons.graphics2d.menu.Activity_Menu_Joystick;
 import org.metatrans.commons.graphics2d.menu.ConfigurationUtils_Joysticks;
@@ -162,6 +163,12 @@ public class Activity_Menu_Main extends Activity_Menu_Main_Base {
 					};
 				}
 			});
+		}
+
+
+		if (Application_Base.getInstance().supportMelodies()) {
+
+			result.add(new Config_MenuMain_Melody());
 		}
 
 

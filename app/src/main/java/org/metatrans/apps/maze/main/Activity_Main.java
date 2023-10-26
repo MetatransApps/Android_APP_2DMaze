@@ -3,9 +3,8 @@ package org.metatrans.apps.maze.main;
 
 import org.metatrans.commons.IActivityInterstitial;
 import org.metatrans.commons.ads.api.IAdsConfiguration;
+import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.graphics2d.main.Activity_Main_Base2D;
-//import org.yoyo.synthesys.synthesizers.Synthesizer;
-//import org.yoyo.synthesys.synthesizers.Synthesizer_Melody;
 
 import android.os.Bundle;
 import android.view.View;
@@ -14,17 +13,12 @@ import android.view.View;
 public class Activity_Main extends Activity_Main_Base2D implements IActivityInterstitial {
 
 
-	//private Synthesizer synthesizer;
-
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		System.out.println("Activity_Main_Base2D: onCreate()");
 
 		super.onCreate(savedInstanceState);
-
-		//synthesizer = new Synthesizer_Melody(Integer.MAX_VALUE);
 	}
 
 
@@ -33,21 +27,7 @@ public class Activity_Main extends Activity_Main_Base2D implements IActivityInte
 
 		super.onResume();
 
-		/*executor.execute(new Runnable() {
-
-			@Override
-			public void run() {
-
-				try {
-
-					synthesizer.play();
-
-				} catch (Exception e) {
-
-					throw new RuntimeException(e);
-				}
-			}
-		});*/
+		Application_Base.getInstance().getMelodiesManager().setMelody(Application_Base.getInstance().getUserSettings().melody_cfg_id);
 	}
 
 
@@ -56,7 +36,7 @@ public class Activity_Main extends Activity_Main_Base2D implements IActivityInte
 
 		super.onPause();
 
-		//synthesizer.markStopped();
+		Application_Base.getInstance().getMelodiesManager().stop();
 	}
 
 
