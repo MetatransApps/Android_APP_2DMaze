@@ -7,6 +7,7 @@ import java.io.ObjectOutputStream;
 
 import org.metatrans.apps.maze.cfg.world.ConfigurationUtils_Level;
 import org.metatrans.commons.cfg.colours.IConfigurationColours;
+import org.metatrans.commons.cfg.melody.IConfigurationMelody;
 
 
 public class UserSettings extends org.metatrans.commons.graphics2d.model.UserSettings {
@@ -21,6 +22,7 @@ public class UserSettings extends org.metatrans.commons.graphics2d.model.UserSet
 		
 		uiColoursID 		= IConfigurationColours.CFG_COLOUR_GRAY;
 		modeID 				= ConfigurationUtils_Level.LEVEL_ID_DEFAULT;
+		melody_cfg_id 		= IConfigurationMelody.CFG_MELODY_ADVENTURE;
 		
 		//fixFields("constructor");
 	}
