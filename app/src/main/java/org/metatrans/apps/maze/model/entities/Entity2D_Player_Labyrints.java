@@ -7,8 +7,10 @@ import java.util.List;
 import java.util.Set;
 
 import org.metatrans.apps.maze.app.Application_Maze;
+import org.metatrans.apps.maze.lib.R;
 import org.metatrans.apps.maze.main.Activity_Result;
 import org.metatrans.apps.maze.model.World_Labyrints;
+import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.graphics2d.app.Application_2D_Base;
 import org.metatrans.commons.graphics2d.model.GameData;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Ground;
@@ -151,6 +153,8 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 					}
 
 					current_ground = cur;
+
+					Application_Base.getInstance().getSFXManager().playSound(-1/*step*/);
 				}
 			}
 		}
@@ -220,7 +224,9 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 				bulletEntity.setSpeed(dx, 0);
 				
 				getWorld().addEntity(bulletEntity);
-				
+
+				Application_Base.getInstance().getSFXManager().playSound(-1/*shot*/);
+
 			} else if (Math.abs(dx) < Math.abs(dy)) {
 				
 				getGameData().count_bullets--;
@@ -249,8 +255,9 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 				bulletEntity.setSpeed(0, dy);
 				
 				getWorld().addEntity(bulletEntity);
+
+				Application_Base.getInstance().getSFXManager().playSound(-1/*shot*/);
 			}
-		
 		}
 	}
 	
