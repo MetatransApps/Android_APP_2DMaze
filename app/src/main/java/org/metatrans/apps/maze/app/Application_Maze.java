@@ -121,7 +121,9 @@ public abstract class Application_Maze extends Application_2D_Base {
 		result.world = WorldGenerator_Labyrints.generate(this, ConfigurationUtils_Level.getInstance().getConfigByID(levelID));
 		
 		result.timestamp_lastborn = System.currentTimeMillis();
-		
+
+		Application_Base.getInstance().getSFXManager().playSound(-1/*start new game*/);
+
 		return result;
 	}
 	

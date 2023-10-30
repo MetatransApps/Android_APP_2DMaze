@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.metatrans.apps.maze.app.Application_Maze;
-import org.metatrans.apps.maze.lib.R;
 import org.metatrans.apps.maze.main.Activity_Result;
 import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.app.Application_Base;
@@ -81,9 +80,23 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 	
 	@Override
 	public void nextMoment(float takts) {
-		
+
+
+		int count_collected_before = getCollectedEntities().size();
+
+
 		super.nextMoment(takts);
-		
+
+
+		int count_collected_after = getCollectedEntities().size();
+
+
+		if (count_collected_after > count_collected_before) {
+
+			Application_Base.getInstance().getSFXManager().playSound(-1/*collected*/);
+		}
+
+
 		List<Entity2D_Ground> groundEntities_NotSolid = getWorld().getGroundEntities_NotSolidOnly();
 
 		for (Entity2D_Ground cur: groundEntities_NotSolid) {
@@ -160,7 +173,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 		}
 		
 		if (levelCompletedCondition()) {
-			
+
 			getGameData().level_completed = true;
 			
 			LevelResult_Base levelResult = Application_2D_Base.getInstance().getLevelsResults().getResult(Application_2D_Base.getInstance().getUserSettings().modeID);
@@ -178,7 +191,10 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 			getGameData().total_count_steps += getGameData().count_steps;
 			//getGameData().last_count_steps = getGameData().total_count_steps;
 			getGameData().count_steps = 0;
-			
+
+			Application_Base.getInstance().getSFXManager().playSound(-1/*level completed*/);
+
+
 			getGameData().world = Application_2D_Base.getInstance().createNewWorld();
 		}
 	}
@@ -260,12 +276,26 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 			}
 		}
 	}
-	
-	
+
+
+	@Override
+	protected void killed(Entity2D_Moving killer) {
+
+		super.killed(killer);
+
+		if (!isInBornTolerance()) {
+
+			Application_Base.getInstance().getSFXManager().playSound(-1/*hearts--*/);
+		}
+	}
+
+
 	@Override
 	protected void killedFinal() {
 		
 		super.killedFinal();
+
+		Application_Base.getInstance().getSFXManager().playSound(-1/*game over*/);
 	}
 	
 	
