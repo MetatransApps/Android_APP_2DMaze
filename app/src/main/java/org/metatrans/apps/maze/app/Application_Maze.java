@@ -7,6 +7,7 @@ import org.metatrans.apps.maze.achievements.AchievementsManager_MOS;
 import org.metatrans.apps.maze.cfg.world.ConfigurationUtils_Level;
 import org.metatrans.apps.maze.events.EventsManager_MOS;
 import org.metatrans.apps.maze.lib.BuildConfig;
+import org.metatrans.apps.maze.lib.R;
 import org.metatrans.apps.maze.main.Activity_Result;
 import org.metatrans.apps.maze.model.UserSettings;
 import org.metatrans.apps.maze.model.WorldGenerator_Labyrints;
@@ -122,7 +123,7 @@ public abstract class Application_Maze extends Application_2D_Base {
 		
 		result.timestamp_lastborn = System.currentTimeMillis();
 
-		Application_Base.getInstance().getSFXManager().playSound(-1/*start new game*/);
+		Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_start_game_1);
 
 		return result;
 	}

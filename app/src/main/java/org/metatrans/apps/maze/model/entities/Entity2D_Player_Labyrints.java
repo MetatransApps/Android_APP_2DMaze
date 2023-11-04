@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.Set;
 
 import org.metatrans.apps.maze.app.Application_Maze;
+import org.metatrans.apps.maze.lib.R;
 import org.metatrans.apps.maze.main.Activity_Result;
 import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.graphics2d.app.Application_2D_Base;
 import org.metatrans.commons.graphics2d.model.GameData;
+import org.metatrans.commons.graphics2d.model.entities.Entity2D_Collectible;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Ground;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Moving;
 import org.metatrans.commons.graphics2d.model.entities.Entity2D_Player;
@@ -93,7 +95,23 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 
 		if (count_collected_after > count_collected_before) {
 
-			Application_Base.getInstance().getSFXManager().playSound(-1/*collected*/);
+			for (int i = count_collected_before; i < count_collected_after; i++) {
+
+				Entity2D_Collectible item = getCollectedEntities().get(i);
+
+				if (item.getSubType() == IEntity2D.SUBTYPE_COLLECTIBLE_KEY) {
+
+					Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_catching_key_1);
+
+				} else if (item.getSubType() == IEntity2D.SUBTYPE_COLLECTIBLE_STAR) {
+
+					Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_catching_key_2);
+
+				} else if (item.getSubType() == IEntity2D.SUBTYPE_COLLECTIBLE_BULLET) {
+
+					Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_catching_key_2);
+				}
+			}
 		}
 
 
@@ -167,12 +185,23 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 
 					current_ground = cur;
 
-					Application_Base.getInstance().getSFXManager().playSound(-1/*step*/);
+					//SFX
+					int[] sfx_steps = new int[] {R.raw.sfx_step_01,
+							R.raw.sfx_step_02,
+							R.raw.sfx_step_03,
+							R.raw.sfx_step_04,
+							R.raw.sfx_step_05};
+
+					int sfx_step_index = (int) (Math.random() * sfx_steps.length);
+
+					Application_Base.getInstance().getSFXManager().playSound(sfx_steps[sfx_step_index]);
 				}
 			}
 		}
 		
 		if (levelCompletedCondition()) {
+
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_get_the_door);
 
 			getGameData().level_completed = true;
 			
@@ -192,7 +221,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 			//getGameData().last_count_steps = getGameData().total_count_steps;
 			getGameData().count_steps = 0;
 
-			Application_Base.getInstance().getSFXManager().playSound(-1/*level completed*/);
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_level_completed);
 
 
 			getGameData().world = Application_2D_Base.getInstance().createNewWorld();
@@ -241,7 +270,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 				
 				getWorld().addEntity(bulletEntity);
 
-				Application_Base.getInstance().getSFXManager().playSound(-1/*shot*/);
+				Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_throwing_food);
 
 			} else if (Math.abs(dx) < Math.abs(dy)) {
 				
@@ -272,7 +301,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 				
 				getWorld().addEntity(bulletEntity);
 
-				Application_Base.getInstance().getSFXManager().playSound(-1/*shot*/);
+				Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_throwing_food);
 			}
 		}
 	}
@@ -281,12 +310,12 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 	@Override
 	protected void killed(Entity2D_Moving killer) {
 
-		super.killed(killer);
-
 		if (!isInBornTolerance()) {
 
-			Application_Base.getInstance().getSFXManager().playSound(-1/*hearts--*/);
+			Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_player_catched);
 		}
+
+		super.killed(killer);
 	}
 
 
@@ -295,7 +324,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 		
 		super.killedFinal();
 
-		Application_Base.getInstance().getSFXManager().playSound(-1/*game over*/);
+		Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_game_over);
 	}
 	
 	

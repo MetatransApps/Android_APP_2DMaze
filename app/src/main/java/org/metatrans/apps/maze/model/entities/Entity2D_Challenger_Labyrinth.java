@@ -3,6 +3,7 @@ package org.metatrans.apps.maze.model.entities;
 
 import java.util.List;
 
+import org.metatrans.apps.maze.lib.R;
 import org.metatrans.apps.maze.model.BitmapCache_Maze;
 import org.metatrans.apps.maze.model.World_Labyrints;
 import org.metatrans.commons.app.Application_Base;
@@ -58,6 +59,6 @@ public class Entity2D_Challenger_Labyrinth extends Entity2D_Challenger {
 
 		super.killed(killer);
 
-		Application_Base.getInstance().getSFXManager().playSound(-1/*fed*/);
+		Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_challenger_fed);
 	}
 }
