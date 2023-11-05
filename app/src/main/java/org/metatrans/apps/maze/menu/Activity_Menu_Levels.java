@@ -207,7 +207,9 @@ public class Activity_Menu_Levels extends Activity_Base {
 							new DialogInterface.OnClickListener() {
 								
 								public void onClick(DialogInterface dialog, int which) {
-									
+
+									Application_Base.getInstance().getSFXManager().playSound(com.commons2d.R.raw.sfx_button_pressed_1);
+
 									int newCfgID = getConfigurationLevels().getID(position);
 									changeMode(newCfgID);
 									
