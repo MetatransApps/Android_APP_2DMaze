@@ -10,6 +10,7 @@ import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.menu.Config_MenuMain_Base;
 import org.metatrans.commons.cfg.menu.Config_MenuMain_Melody;
 import org.metatrans.commons.cfg.menu.IConfigurationMenu_Main;
+import org.metatrans.commons.cfg.sound.Config_MenuMain_Sound;
 import org.metatrans.commons.graphics2d.menu.Activity_Menu_Joystick;
 import org.metatrans.commons.graphics2d.menu.ConfigurationUtils_Joysticks;
 import org.metatrans.commons.graphics2d.model.UserSettings;
@@ -164,6 +165,9 @@ public class Activity_Menu_Main extends Activity_Menu_Main_Base {
 				}
 			});
 		}
+
+
+		result.add(new Config_MenuMain_Sound());
 
 
 		if (Application_Base.getInstance().supportMelodies()) {
