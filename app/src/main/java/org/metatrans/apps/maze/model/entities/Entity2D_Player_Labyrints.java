@@ -109,7 +109,7 @@ public class Entity2D_Player_Labyrints extends Entity2D_Player {
 
 				} else if (item.getSubType() == IEntity2D.SUBTYPE_COLLECTIBLE_BULLET) {
 
-					Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_catching_key_2);
+					Application_Base.getInstance().getSFXManager().playSound(R.raw.sfx_catching_food);
 				}
 			}
 		}
