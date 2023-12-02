@@ -4,6 +4,7 @@ package org.metatrans.apps.maze.main;
 import org.metatrans.commons.IActivityInterstitial;
 import org.metatrans.commons.ads.api.IAdsConfiguration;
 import org.metatrans.commons.app.Application_Base;
+import org.metatrans.commons.graphics2d.app.Application_2D_Base;
 import org.metatrans.commons.graphics2d.main.Activity_Main_Base2D;
 
 import android.os.Bundle;
@@ -27,7 +28,10 @@ public class Activity_Main extends Activity_Main_Base2D implements IActivityInte
 
 		super.onResume();
 
-		Application_Base.getInstance().getMelodiesManager().setMelody(Application_Base.getInstance().getUserSettings().melody_cfg_id);
+		if (!Application_2D_Base.getInstance().getGameData().paused) {
+
+			Application_Base.getInstance().getMelodiesManager().setMelody(Application_Base.getInstance().getUserSettings().melody_cfg_id);
+		}
 	}
 
 

@@ -38,6 +38,29 @@ public abstract class Application_Maze extends Application_2D_Base {
 
 		ConfigurationUtils_Level.createInstance();
 
+		getSFXManager().loadSounds(this,
+				new int[] {
+						org.metatrans.commons.R.raw.sfx_button_pressed_1,
+						org.metatrans.commons.R.raw.sfx_button_pressed_2,
+						org.metatrans.commons.R.raw.sfx_button_pressed_3,
+						R.raw.sfx_start_game_1,
+						R.raw.sfx_game_over,
+						R.raw.sfx_level_completed,
+						R.raw.sfx_step_01,
+						R.raw.sfx_step_02,
+						R.raw.sfx_step_03,
+						R.raw.sfx_step_04,
+						R.raw.sfx_step_05,
+						R.raw.sfx_catching_food,
+						R.raw.sfx_catching_key_1,
+						R.raw.sfx_catching_key_2,
+						R.raw.sfx_challenger_fed,
+						R.raw.sfx_get_the_door,
+						R.raw.sfx_player_catched,
+						R.raw.sfx_throwing_food,
+				}
+		);
+
 		super.onCreate();
 		//Called when the application is starting, before any other application objects have been created.
 		
