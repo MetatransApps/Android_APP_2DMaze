@@ -37,7 +37,7 @@ public class WorldGenerator_Labyrints {
 
 	public static int[] getCellsCount(float spaceMultiplier) {
 
-		int[] screen_size = ScreenUtils.getScreenSize(Application_Base.getInstance());
+		int[] screen_size = ScreenUtils.getScreenSize();
 		int main_width = (int) (spaceMultiplier * CELLS_COUNT_PER_SCREEN * (Math.max(screen_size[0], screen_size[1]) / (double)Math.min(screen_size[0], screen_size[1])));
 		int main_height = (int) (spaceMultiplier * CELLS_COUNT_PER_SCREEN );
 
@@ -58,7 +58,7 @@ public class WorldGenerator_Labyrints {
 
 		System.out.println("GAMEDATA GENERATION");
 
-		int[] screen_size = ScreenUtils.getScreenSize(activity);
+		int[] screen_size = ScreenUtils.getScreenSize();
 		int main_width = (int) (cfg_world.getSpaceMultiplier() * Math.max(screen_size[0], screen_size[1]));
 		int main_height = (int) (cfg_world.getSpaceMultiplier() * Math.min(screen_size[0], screen_size[1]));
 
