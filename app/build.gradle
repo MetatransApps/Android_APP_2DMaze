@@ -3,8 +3,10 @@ plugins {
 }
 
 android {
+
+    namespace "org.metatrans.apps.maze.lib"
+
     compileSdkVersion 31
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
 
