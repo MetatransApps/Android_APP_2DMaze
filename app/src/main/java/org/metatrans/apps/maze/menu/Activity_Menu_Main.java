@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.metatrans.apps.maze.cfg.world.ConfigurationUtils_Level;
 import org.metatrans.apps.maze.lib.R;
+import org.metatrans.commons.Activity_Base_Ads_Banner;
+import org.metatrans.commons.IEarnedRewardCallback;
 import org.metatrans.commons.app.Application_Base;
 import org.metatrans.commons.cfg.menu.Config_MenuMain_Base;
 import org.metatrans.commons.cfg.menu.Config_MenuMain_Melody;
@@ -15,6 +17,7 @@ import org.metatrans.commons.graphics2d.menu.Activity_Menu_Joystick;
 import org.metatrans.commons.graphics2d.menu.ConfigurationUtils_Joysticks;
 import org.metatrans.commons.graphics2d.model.UserSettings;
 import org.metatrans.commons.menu.Activity_Menu_Main_Base;
+import org.metatrans.commons.ui.Toast_Base;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -159,7 +162,15 @@ public class Activity_Menu_Main extends Activity_Menu_Main_Base {
 						@Override
 						public void run() {
 
-							Activity_Menu_Main.this.openRewardedVideo();
+							Activity_Menu_Main.this.openRewardedVideo(new IEarnedRewardCallback() {
+								@Override
+								public void onEarnedReward() {
+
+									Activity_Base_Ads_Banner.timestamp_last_rewarded_ad_opening = System.currentTimeMillis();
+
+									Toast_Base.showToast_InCenter_Short(Activity_Menu_Main.this, "Reward earned");
+								}
+							});
 						}
 					};
 				}
